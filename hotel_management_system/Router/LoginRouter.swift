@@ -12,34 +12,33 @@ enum LoginRouter: URLRequestConvertible {
     
     case login(body: LoginModel)
     case getAllCustomers
-    
     var method: HTTPMethod {
         switch self {
-        case .login:
-            return .post
-        case .getAllCustomers:
-            return .get
+            case .login:
+                return .post
+            case .getAllCustomers:
+                return .get
         }
     }
     
     var path: String {
         switch self {
-        case .login:
-            return "/customers/login"
-        case .getAllCustomers:
-            return "/customers"
+            case .login:
+                return "/customers/login"
+            case .getAllCustomers:
+                return "/customers"
         }
     }
     
     var parameters: Parameters? {
         switch self {
-        case .login(let body):
-            return [
-                "email": body.email,
-                "password": body.password
-            ]
-        case .getAllCustomers:
-            return nil
+            case .login(let body):
+                return [
+                    "email": body.email,
+                    "password": body.password
+                ]
+            case .getAllCustomers:
+                return nil
         }
     }
     

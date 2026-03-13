@@ -196,150 +196,259 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sqy-JA-XnC">
-                                <rect key="frame" x="80" y="162" width="253" height="42"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="35"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="f3D-5E-BZ3">
-                                <rect key="frame" x="30" y="248.00000000000003" width="350" height="95.333333333333343"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q4Z-eO-W1Y">
+                                <rect key="frame" x="0.0" y="142" width="414" height="754"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YoH-1M-EXf">
-                                        <rect key="frame" x="0.0" y="0.0" width="350" height="20.333333333333332"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <color key="textColor" name="Default Text Color"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tx3-En-l8Y" customClass="PaddedTextFieldLogin" customModule="hotel_management_system" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="35.333333333333314" width="350" height="60"/>
-                                        <color key="backgroundColor" name="Text Field Color"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="350" id="4re-rO-qIq"/>
-                                            <constraint firstAttribute="height" constant="60" id="LmC-G5-Fbh"/>
-                                        </constraints>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="qIL-Lg-JYa">
-                                <rect key="frame" x="30" y="373.33333333333331" width="350" height="95.333333333333314"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBH-wH-s9J">
-                                        <rect key="frame" x="0.0" y="0.0" width="350" height="20.333333333333332"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ctS-vo-tDf">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1080"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sqy-JA-XnC">
+                                                <rect key="frame" x="80" y="34" width="254" height="42"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="35"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="5ZL-SH-6t6">
+                                                <rect key="frame" x="32" y="363.66666666666669" width="350" height="95.333333333333314"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1Z-ut-3Bj">
+                                                        <rect key="frame" x="0.0" y="0.0" width="350" height="20.333333333333332"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <color key="textColor" name="Default Text Color"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your phone number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X54-3D-hAs" customClass="PaddedTextFieldLogin" customModule="hotel_management_system" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="35.333333333333314" width="350" height="60"/>
+                                                        <color key="backgroundColor" name="Text Field Color"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="0nj-wH-qIe"/>
+                                                            <constraint firstAttribute="width" constant="350" id="uxW-Cf-9WV"/>
+                                                        </constraints>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="f3D-5E-BZ3">
+                                                <rect key="frame" x="32" y="115" width="350" height="95.333333333333314"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YoH-1M-EXf">
+                                                        <rect key="frame" x="0.0" y="0.0" width="350" height="20.333333333333332"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <color key="textColor" name="Default Text Color"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tx3-En-l8Y" customClass="PaddedTextFieldLogin" customModule="hotel_management_system" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="35.333333333333314" width="350" height="60"/>
+                                                        <color key="backgroundColor" name="Text Field Color"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="350" id="4re-rO-qIq"/>
+                                                            <constraint firstAttribute="height" constant="60" id="LmC-G5-Fbh"/>
+                                                        </constraints>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="qIL-Lg-JYa">
+                                                <rect key="frame" x="32" y="239.33333333333334" width="350" height="95.333333333333343"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBH-wH-s9J">
+                                                        <rect key="frame" x="0.0" y="0.0" width="350" height="20.333333333333332"/>
+                                                        <color key="backgroundColor" name="Background"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <color key="textColor" name="Default Text Color"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your e-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1d4-Ea-pTw" customClass="PaddedTextFieldLogin" customModule="hotel_management_system" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="35.333333333333371" width="350" height="60"/>
+                                                        <color key="backgroundColor" name="Text Field Color"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="350" id="6fU-f5-z06"/>
+                                                            <constraint firstAttribute="height" constant="60" id="ZDX-Wk-hKt"/>
+                                                        </constraints>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="uEQ-f1-Gzj" customClass="Pass">
+                                                <rect key="frame" x="32" y="861" width="350" height="85.333333333333371"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DOB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CvN-ax-SVm">
+                                                        <rect key="frame" x="0.0" y="0.0" width="350" height="20.333333333333332"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <color key="textColor" name="Default Text Color"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <datePicker contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="Rh8-hS-mHz">
+                                                        <rect key="frame" x="0.0" y="35.333333333333258" width="350" height="50"/>
+                                                        <color key="backgroundColor" name="Background"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="Lfp-cf-O1H"/>
+                                                            <constraint firstAttribute="width" constant="350" id="Xt1-TQ-Nu8"/>
+                                                        </constraints>
+                                                        <date key="minimumDate" timeIntervalSinceReferenceDate="-1609419600">
+                                                            <!--1950-01-01 11:00:00 +0000-->
+                                                        </date>
+                                                        <date key="maximumDate" timeIntervalSinceReferenceDate="820407600">
+                                                            <!--2026-12-31 11:00:00 +0000-->
+                                                        </date>
+                                                    </datePicker>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="piD-kC-lkN" customClass="Pass">
+                                                <rect key="frame" x="32" y="487.99999999999994" width="350" height="95.333333333333314"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HDg-WF-IpT">
+                                                        <rect key="frame" x="0.0" y="0.0" width="350" height="20.333333333333332"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <color key="textColor" name="Default Text Color"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KKY-O3-NIl" customClass="PaddedTextFieldLogin" customModule="hotel_management_system" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="35.333333333333371" width="350" height="60"/>
+                                                        <color key="backgroundColor" name="Text Field Color"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="350" id="GkA-dD-EhL"/>
+                                                            <constraint firstAttribute="height" constant="60" id="mjn-Kp-EYo"/>
+                                                        </constraints>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="crX-8D-adG" customClass="Pass">
+                                                <rect key="frame" x="32" y="736.66666666666663" width="350" height="95.333333333333371"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xpi-0w-8Rv">
+                                                        <rect key="frame" x="0.0" y="0.0" width="350" height="20.333333333333332"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <color key="textColor" name="Default Text Color"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8P1-DP-LpV" customClass="PaddedTextFieldLogin" customModule="hotel_management_system" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="35.333333333333371" width="350" height="60"/>
+                                                        <color key="backgroundColor" name="Text Field Color"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="350" id="qpK-RG-gWX"/>
+                                                            <constraint firstAttribute="height" constant="60" id="y6J-lP-YW0"/>
+                                                        </constraints>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="iQI-By-LHk" customClass="Pass">
+                                                <rect key="frame" x="32" y="612.33333333333337" width="350" height="95.333333333333371"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVq-9u-S8S">
+                                                        <rect key="frame" x="0.0" y="0.0" width="350" height="20.333333333333332"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <color key="textColor" name="Default Text Color"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rUf-3J-7xl" customClass="PasswordTextField" customModule="hotel_management_system" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="35.333333333333258" width="350" height="60"/>
+                                                        <color key="backgroundColor" name="Text Field Color"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="350" id="Elw-uT-qJG"/>
+                                                            <constraint firstAttribute="height" constant="60" id="UjD-WK-TCu"/>
+                                                        </constraints>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="seH-IN-nSz">
+                                                <rect key="frame" x="32" y="996.33333333333326" width="350" height="52"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="52" id="O2E-9s-gal"/>
+                                                    <constraint firstAttribute="width" constant="350" id="yux-di-dJn"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Create An Account" cornerStyle="large">
+                                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                    <color key="baseBackgroundColor" name="Button Color"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="createAccountBtn:" destination="9gf-2j-BiP" eventType="touchUpInside" id="V7Z-2j-Za3"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                         <color key="backgroundColor" name="Background"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <color key="textColor" name="Default Text Color"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your e-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1d4-Ea-pTw" customClass="PaddedTextFieldLogin" customModule="hotel_management_system" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="35.333333333333371" width="350" height="60"/>
-                                        <color key="backgroundColor" name="Text Field Color"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="ContentView" label="ContentView"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="350" id="6fU-f5-z06"/>
-                                            <constraint firstAttribute="height" constant="60" id="ZDX-Wk-hKt"/>
+                                            <constraint firstAttribute="trailing" secondItem="Sqy-JA-XnC" secondAttribute="trailing" constant="80" id="2Z2-YQ-w8L"/>
+                                            <constraint firstItem="crX-8D-adG" firstAttribute="top" secondItem="iQI-By-LHk" secondAttribute="bottom" constant="29" id="3OS-it-WzF"/>
+                                            <constraint firstItem="piD-kC-lkN" firstAttribute="top" secondItem="5ZL-SH-6t6" secondAttribute="bottom" constant="29" id="3io-YA-y7T"/>
+                                            <constraint firstItem="piD-kC-lkN" firstAttribute="leading" secondItem="ctS-vo-tDf" secondAttribute="leading" constant="32" id="91A-AW-ZFg"/>
+                                            <constraint firstItem="seH-IN-nSz" firstAttribute="top" secondItem="uEQ-f1-Gzj" secondAttribute="bottom" constant="50" id="FN2-l7-FDs"/>
+                                            <constraint firstAttribute="trailing" secondItem="crX-8D-adG" secondAttribute="trailing" constant="32" id="JWq-6J-WyK"/>
+                                            <constraint firstItem="f3D-5E-BZ3" firstAttribute="top" secondItem="Sqy-JA-XnC" secondAttribute="bottom" constant="39" id="NFu-om-dCw"/>
+                                            <constraint firstAttribute="trailing" secondItem="seH-IN-nSz" secondAttribute="trailing" constant="32" id="R42-nJ-LUZ"/>
+                                            <constraint firstAttribute="height" constant="1080" id="Rqw-YO-1Xu"/>
+                                            <constraint firstAttribute="trailing" secondItem="piD-kC-lkN" secondAttribute="trailing" constant="32" id="RyI-iN-UHC"/>
+                                            <constraint firstAttribute="trailing" secondItem="f3D-5E-BZ3" secondAttribute="trailing" constant="32" id="Sr0-zB-oTu"/>
+                                            <constraint firstItem="5ZL-SH-6t6" firstAttribute="leading" secondItem="ctS-vo-tDf" secondAttribute="leading" constant="32" id="V40-l0-4cu"/>
+                                            <constraint firstItem="qIL-Lg-JYa" firstAttribute="top" secondItem="f3D-5E-BZ3" secondAttribute="bottom" constant="29" id="XLc-T3-z2e"/>
+                                            <constraint firstItem="5ZL-SH-6t6" firstAttribute="top" secondItem="qIL-Lg-JYa" secondAttribute="bottom" constant="29" id="XNX-8A-Uzp"/>
+                                            <constraint firstItem="uEQ-f1-Gzj" firstAttribute="top" secondItem="crX-8D-adG" secondAttribute="bottom" constant="29" id="ZNP-8q-2Or"/>
+                                            <constraint firstItem="Sqy-JA-XnC" firstAttribute="leading" secondItem="ctS-vo-tDf" secondAttribute="leading" constant="80" id="Zpp-7i-LEz"/>
+                                            <constraint firstItem="seH-IN-nSz" firstAttribute="leading" secondItem="ctS-vo-tDf" secondAttribute="leading" constant="32" id="apW-oW-IxY"/>
+                                            <constraint firstAttribute="trailing" secondItem="qIL-Lg-JYa" secondAttribute="trailing" constant="32" id="asN-4m-u5p"/>
+                                            <constraint firstItem="iQI-By-LHk" firstAttribute="top" secondItem="piD-kC-lkN" secondAttribute="bottom" constant="29" id="bhW-xo-JYR"/>
+                                            <constraint firstAttribute="trailing" secondItem="5ZL-SH-6t6" secondAttribute="trailing" constant="32" id="dd5-39-Hrj"/>
+                                            <constraint firstAttribute="trailing" secondItem="uEQ-f1-Gzj" secondAttribute="trailing" constant="32" id="jD7-gL-VYu"/>
+                                            <constraint firstItem="iQI-By-LHk" firstAttribute="leading" secondItem="ctS-vo-tDf" secondAttribute="leading" constant="32" id="lAf-Qx-Ht6"/>
+                                            <constraint firstItem="Sqy-JA-XnC" firstAttribute="top" secondItem="ctS-vo-tDf" secondAttribute="top" constant="34" id="lRW-Du-kU1"/>
+                                            <constraint firstAttribute="trailing" secondItem="iQI-By-LHk" secondAttribute="trailing" constant="32" id="lUl-9m-wMf"/>
+                                            <constraint firstItem="qIL-Lg-JYa" firstAttribute="leading" secondItem="ctS-vo-tDf" secondAttribute="leading" constant="32" id="sIm-jl-P2s"/>
+                                            <constraint firstItem="f3D-5E-BZ3" firstAttribute="leading" secondItem="ctS-vo-tDf" secondAttribute="leading" constant="32" id="tjZ-kB-v0s"/>
+                                            <constraint firstItem="uEQ-f1-Gzj" firstAttribute="leading" secondItem="ctS-vo-tDf" secondAttribute="leading" constant="32" id="umM-EL-gwN"/>
+                                            <constraint firstItem="crX-8D-adG" firstAttribute="leading" secondItem="ctS-vo-tDf" secondAttribute="leading" constant="32" id="yqu-fv-BAs"/>
                                         </constraints>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                    </view>
                                 </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="5ZL-SH-6t6">
-                                <rect key="frame" x="30" y="498.66666666666669" width="350" height="95.333333333333314"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1Z-ut-3Bj">
-                                        <rect key="frame" x="0.0" y="0.0" width="350" height="20.333333333333332"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <color key="textColor" name="Default Text Color"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your phone number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X54-3D-hAs" customClass="PaddedTextFieldLogin" customModule="hotel_management_system" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="35.333333333333314" width="350" height="60"/>
-                                        <color key="backgroundColor" name="Text Field Color"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="0nj-wH-qIe"/>
-                                            <constraint firstAttribute="width" constant="350" id="uxW-Cf-9WV"/>
-                                        </constraints>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                    </textField>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="iQI-By-LHk" customClass="Pass">
-                                <rect key="frame" x="30" y="624" width="350" height="95.333333333333371"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVq-9u-S8S">
-                                        <rect key="frame" x="0.0" y="0.0" width="350" height="20.333333333333332"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <color key="textColor" name="Default Text Color"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rUf-3J-7xl" customClass="PasswordTextField" customModule="hotel_management_system" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="35.333333333333371" width="350" height="60"/>
-                                        <color key="backgroundColor" name="Text Field Color"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="350" id="Elw-uT-qJG"/>
-                                            <constraint firstAttribute="height" constant="60" id="UjD-WK-TCu"/>
-                                        </constraints>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                    </textField>
-                                </subviews>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="seH-IN-nSz">
-                                <rect key="frame" x="30" y="762.33333333333337" width="350" height="52"/>
+                                <color key="backgroundColor" name="Background"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="O2E-9s-gal"/>
+                                    <constraint firstItem="ctS-vo-tDf" firstAttribute="top" secondItem="q4Z-eO-W1Y" secondAttribute="top" id="5O1-yu-aoW"/>
+                                    <constraint firstAttribute="bottom" secondItem="ctS-vo-tDf" secondAttribute="bottom" id="ebh-d2-Wnz"/>
+                                    <constraint firstAttribute="trailing" secondItem="ctS-vo-tDf" secondAttribute="trailing" id="g1o-8R-da7"/>
+                                    <constraint firstItem="ctS-vo-tDf" firstAttribute="leading" secondItem="q4Z-eO-W1Y" secondAttribute="leading" id="t4v-lx-5lR"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Create An Account" cornerStyle="large">
-                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
-                                    <color key="baseBackgroundColor" name="Button Color"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="createAccountBtn:" destination="9gf-2j-BiP" eventType="touchUpInside" id="V7Z-2j-Za3"/>
-                                </connections>
-                            </button>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="F8v-Hq-d4j"/>
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
-                            <constraint firstItem="f3D-5E-BZ3" firstAttribute="leading" secondItem="F8v-Hq-d4j" secondAttribute="leading" constant="30" id="4gD-cE-u7D"/>
-                            <constraint firstItem="f3D-5E-BZ3" firstAttribute="top" secondItem="Sqy-JA-XnC" secondAttribute="bottom" constant="44" id="7bz-Hx-bqS"/>
-                            <constraint firstItem="F8v-Hq-d4j" firstAttribute="trailing" secondItem="5ZL-SH-6t6" secondAttribute="trailing" constant="34" id="BXk-Zo-FAI"/>
-                            <constraint firstItem="qIL-Lg-JYa" firstAttribute="leading" secondItem="F8v-Hq-d4j" secondAttribute="leading" constant="30" id="G2s-8J-q8d"/>
-                            <constraint firstItem="Sqy-JA-XnC" firstAttribute="leading" secondItem="F8v-Hq-d4j" secondAttribute="leading" constant="80" id="H6b-Yr-UAz"/>
-                            <constraint firstItem="F8v-Hq-d4j" firstAttribute="trailing" secondItem="f3D-5E-BZ3" secondAttribute="trailing" constant="34" id="J0r-ta-tAR"/>
-                            <constraint firstItem="seH-IN-nSz" firstAttribute="leading" secondItem="F8v-Hq-d4j" secondAttribute="leading" constant="30" id="LzU-4q-1I7"/>
-                            <constraint firstItem="qIL-Lg-JYa" firstAttribute="top" secondItem="f3D-5E-BZ3" secondAttribute="bottom" constant="30" id="Ojg-cO-Hhw"/>
-                            <constraint firstItem="iQI-By-LHk" firstAttribute="top" secondItem="5ZL-SH-6t6" secondAttribute="bottom" constant="30" id="QSX-S3-tbS"/>
-                            <constraint firstItem="iQI-By-LHk" firstAttribute="leading" secondItem="F8v-Hq-d4j" secondAttribute="leading" constant="30" id="TAy-Fw-kcN"/>
-                            <constraint firstItem="F8v-Hq-d4j" firstAttribute="trailing" secondItem="iQI-By-LHk" secondAttribute="trailing" constant="34" id="THx-dQ-k2j"/>
-                            <constraint firstItem="F8v-Hq-d4j" firstAttribute="trailing" secondItem="Sqy-JA-XnC" secondAttribute="trailing" constant="81" id="XGF-Sh-6wd"/>
-                            <constraint firstItem="F8v-Hq-d4j" firstAttribute="trailing" secondItem="qIL-Lg-JYa" secondAttribute="trailing" constant="34" id="a4U-2q-6Mb"/>
-                            <constraint firstItem="F8v-Hq-d4j" firstAttribute="trailing" secondItem="seH-IN-nSz" secondAttribute="trailing" constant="34" id="c5n-LE-uhN"/>
-                            <constraint firstItem="5ZL-SH-6t6" firstAttribute="top" secondItem="qIL-Lg-JYa" secondAttribute="bottom" constant="30" id="fQE-iO-wE9"/>
-                            <constraint firstItem="Sqy-JA-XnC" firstAttribute="top" secondItem="F8v-Hq-d4j" secondAttribute="top" constant="20" id="gpL-rg-EFg"/>
-                            <constraint firstItem="seH-IN-nSz" firstAttribute="top" secondItem="iQI-By-LHk" secondAttribute="bottom" constant="43" id="iWO-D5-Ijk"/>
-                            <constraint firstItem="5ZL-SH-6t6" firstAttribute="leading" secondItem="F8v-Hq-d4j" secondAttribute="leading" constant="30" id="yJC-ln-vqg"/>
+                            <constraint firstItem="q4Z-eO-W1Y" firstAttribute="top" secondItem="F8v-Hq-d4j" secondAttribute="top" id="N6p-0e-KR2"/>
+                            <constraint firstItem="q4Z-eO-W1Y" firstAttribute="leading" secondItem="F8v-Hq-d4j" secondAttribute="leading" id="OBs-7H-0do"/>
+                            <constraint firstItem="q4Z-eO-W1Y" firstAttribute="trailing" secondItem="F8v-Hq-d4j" secondAttribute="trailing" id="efj-jA-PMD"/>
+                            <constraint firstAttribute="bottom" secondItem="q4Z-eO-W1Y" secondAttribute="bottom" id="kJm-P7-Gkj"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ab1-4w-9hX"/>
+                    <size key="freeformSize" width="414" height="896"/>
                     <connections>
+                        <outlet property="DOBPicker" destination="Rh8-hS-mHz" id="Gts-ie-5w8"/>
+                        <outlet property="addressInput" destination="8P1-DP-LpV" id="xCq-4U-U0x"/>
                         <outlet property="emailInput" destination="1d4-Ea-pTw" id="vQp-sN-OsW"/>
                         <outlet property="nameInput" destination="tx3-En-l8Y" id="hNB-sQ-XZl"/>
                         <outlet property="passwordInput" destination="rUf-3J-7xl" id="WKx-yZ-VFw"/>
                         <outlet property="phoneInput" destination="X54-3D-hAs" id="r0U-KI-zKB"/>
+                        <outlet property="usernameInput" destination="KKY-O3-NIl" id="lvx-Jz-ANy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xEF-4T-ltb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1831.8840579710147" y="-29.464285714285712"/>
+            <point key="canvasLocation" x="1892.753623188406" y="-28.125"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="GkG-aX-vmT">

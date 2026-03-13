@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		04B90A092F60D3DF00E364C9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 04B90A082F60D3DF00E364C9 /* Alamofire */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		044160B32F60CD61006AC7F2 /* hotel_management_system.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hotel_management_system.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04B90A092F60D3DF00E364C9 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,7 @@
 			);
 			name = hotel_management_system;
 			packageProductDependencies = (
+				04B90A082F60D3DF00E364C9 /* Alamofire */,
 			);
 			productName = hotel_management_system;
 			productReference = 044160B32F60CD61006AC7F2 /* hotel_management_system.app */;
@@ -107,6 +113,9 @@
 			);
 			mainGroup = 044160AA2F60CD61006AC7F2;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				04B90A072F60D3DF00E364C9 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 044160B42F60CD61006AC7F2 /* Products */;
 			projectDirPath = "";
@@ -347,6 +356,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		04B90A072F60D3DF00E364C9 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.11.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		04B90A082F60D3DF00E364C9 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04B90A072F60D3DF00E364C9 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 044160AB2F60CD61006AC7F2 /* Project object */;
 }

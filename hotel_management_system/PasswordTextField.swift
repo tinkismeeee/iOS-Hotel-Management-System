@@ -25,7 +25,7 @@ class PasswordTextField: UITextField, UITextFieldDelegate{
             string: placeholderText,
             attributes: [
                 .foregroundColor: UIColor(named: "Placeholder Color") ?? .systemGray,
-                .font: UIFont.systemFont(ofSize: 14, weight: .medium)
+                .font: UIFont.systemFont(ofSize: 14, weight: .bold)
             ]
         )
 

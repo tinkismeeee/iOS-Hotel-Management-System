@@ -24,5 +24,10 @@ class Service {
                 completion(response.result)
             }
     }
+    func signUp(body: SignupModel, completion: @escaping(Result<Data?, AFError>) -> Void) {
+        AF.request(SignupRouter.signUp(body: body)).validate().response {
+            response in completion(response.result)
+        }
+    }
 }
 

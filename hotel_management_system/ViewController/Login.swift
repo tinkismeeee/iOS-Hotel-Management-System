@@ -63,9 +63,15 @@ class Login: UIViewController {
                     DispatchQueue.main.async {
                         self.loginSuccess = false
                         self.present(self.alert, animated: true, completion: nil)
+                        self.emailInput.text = ""
+                        self.passwordInput.text = ""
                     }
                 }
             }
         }
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        resignFirstResponder()
+        return true
     }
 }
