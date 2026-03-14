@@ -2,11 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
-		<false/>
+		<true/>
 		<key>NSExceptionDomains</key>
 		<dict>
 			<key>38.242.228.108</key>
@@ -18,7 +17,6 @@
 			</dict>
 		</dict>
 	</dict>
-
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -38,6 +36,5 @@
 			</array>
 		</dict>
 	</dict>
-
 </dict>
 </plist>

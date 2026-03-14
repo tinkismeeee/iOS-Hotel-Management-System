@@ -17,6 +17,7 @@ class Signup : UIViewController {
     @IBOutlet weak var usernameInput: PaddedTextFieldLogin!
     let alert = UIAlertController(title: "Error", message: "All information must be filled", preferredStyle: .alert)
     let signUpSuccessfullyAlert = UIAlertController(title: "Success", message: "Signup Successfully", preferredStyle: .alert)
+    let Alert500 = UIAlertController(title: "Error", message: "Email already exists", preferredStyle: .alert)
     override func viewDidLoad() {
         super.viewDidLoad()
         let okAction = UIAlertAction(title: "OK", style: .default) {
@@ -29,6 +30,7 @@ class Signup : UIViewController {
         alert.addAction(okAction)
         signUpSuccessfullyAlert.addAction(backAction)
         signUpSuccessfullyAlert.addAction(okAction)
+        Alert500.addAction(okAction)
 
     }
     @IBAction func createAccountBtn(_ sender: Any) {
@@ -63,17 +65,32 @@ class Signup : UIViewController {
                     if let data = data {
                         print(String(data: data, encoding: .utf8) ?? "OK")
                         print("OK")
-                        self.present(self.signUpSuccessfullyAlert, animated: true, completion: nil)
-                        self.nameInput.text = ""
-                        self.emailInput.text = ""
-                        self.passwordInput.text = ""
-                        self.phoneInput.text = ""
-                        self.addressInput.text = ""
-                        self.usernameInput.text = ""
+                        DispatchQueue.main.async {
+                            self.present(self.signUpSuccessfullyAlert, animated: true)
+                            self.nameInput.text = ""
+                            self.emailInput.text = ""
+                            self.passwordInput.text = ""
+                            self.phoneInput.text = ""
+                            self.addressInput.text = ""
+                            self.usernameInput.text = ""
+                        }
                     }
                 case .failure(let error):
                     print("Lỗi")
                     print(error)
+                    if let statusCode = error.responseCode {
+                        if statusCode == 500 {
+                            DispatchQueue.main.async {
+                                self.present(self.Alert500, animated: true)
+                                self.nameInput.text = ""
+                                self.emailInput.text = ""
+                                self.passwordInput.text = ""
+                                self.phoneInput.text = ""
+                                self.addressInput.text = ""
+                                self.usernameInput.text = ""
+                            }
+                        }
+                    }
                 }
             }
             

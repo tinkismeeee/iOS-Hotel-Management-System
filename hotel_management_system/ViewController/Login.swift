@@ -15,7 +15,7 @@ class Login: UIViewController {
     var loginSuccess = false
     var isRemember = false
     let alert = UIAlertController(title: "Error", message: "Email or password is invalid", preferredStyle: .alert)
-    
+    let loginInfo = UserDefaults.standard
     override func viewDidLoad() {
         super.viewDidLoad()
         let okAction = UIAlertAction(title: "OK", style: .default) {
@@ -33,7 +33,7 @@ class Login: UIViewController {
     }
     
     @IBAction func rememberBtn(_ sender: Any) {
-        
+        isRemember.toggle()
     }
     @IBAction func btnLoginTapped(_ sender: Any) {
         let email = emailInput.text ?? ""
@@ -54,7 +54,9 @@ class Login: UIViewController {
                             self.loginSuccess = true
                             self.emailInput.text = ""
                             self.passwordInput.text = ""
-                            self.performSegue(withIdentifier: "enterotp", sender: self)
+                            self.loginInfo.set(email, forKey: "email")
+                            self.loginInfo.set(password, forKey: "password")
+                            self.performSegue(withIdentifier: "enterotp", sender: email)
                             self.loginSuccess = false
                         }
                     }
