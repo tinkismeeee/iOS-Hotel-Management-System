@@ -29,5 +29,10 @@ class Service {
             response in completion(response.result)
         }
     }
+    func getCustomerByEmail(email: String, completion: @escaping(Result<Data?, AFError>) -> Void) {
+        AF.request(ForgotPasswordRouter.getCustomerByEmail(email: email)).validate().response { response in
+                completion(response.result)
+        }
+    }
 }
 
