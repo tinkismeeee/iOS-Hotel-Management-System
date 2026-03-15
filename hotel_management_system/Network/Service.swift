@@ -34,5 +34,13 @@ class Service {
                 completion(response.result)
         }
     }
+    func updatePassword(body: UpdatePasswordModel,
+                        completion: @escaping(Result<Data?, AFError>) -> Void) {
+        AF.request(ForgotPasswordRouter.updatePassword(body: body))
+            .validate()
+            .response { response in
+                completion(response.result)
+            }
+    }
 }
 

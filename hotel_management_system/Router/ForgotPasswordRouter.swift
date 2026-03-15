@@ -10,22 +10,32 @@ import Foundation
 
 enum ForgotPasswordRouter: URLRequestConvertible {
     case getCustomerByEmail(email: String)
+    case updatePassword(body: UpdatePasswordModel)
     var method: HTTPMethod {
         switch self {
         case .getCustomerByEmail:
             return .get
+        case .updatePassword:
+            return .put
         }
     }
     var path: String {
         switch self {
         case .getCustomerByEmail(let email):
-            return "/customers/email/\(email)"
+            return "/customers/email/\(email.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? email)"
+        case .updatePassword:
+            return "/customers/update-password"
         }
     }
     var parameters: Parameters? {
         switch self {
         case .getCustomerByEmail:
             return nil
+        case .updatePassword(let body):
+            return [
+                "email": body.email,
+                "newPassword": body.newPassword
+            ]
         }
     }
     func asURLRequest() throws -> URLRequest {

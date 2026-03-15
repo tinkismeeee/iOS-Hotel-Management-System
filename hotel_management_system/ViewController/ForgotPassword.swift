@@ -23,6 +23,12 @@ class ForgotPassword : UIViewController {
         notFoundAlert.addAction(okAction)
         // Do any additional setup after loading the view.
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Next" {
+            let destination = segue.destination as! CreateNewPassword
+            destination.userEmail = sender as? String
+        }
+    }
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == "Next" {
             return emailValid
@@ -39,7 +45,7 @@ class ForgotPassword : UIViewController {
             switch result {
             case .success:
                 DispatchQueue.main.async {
-                    self.performSegue(withIdentifier: "Next", sender: nil)
+                    self.performSegue(withIdentifier: "Next", sender: email)
                 }
             case .failure:
                 DispatchQueue.main.async {
