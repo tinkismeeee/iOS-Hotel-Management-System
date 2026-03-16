@@ -9,6 +9,7 @@ import UIKit
 
 class OTPVerify: UIViewController, UITextFieldDelegate{
 
+    @IBOutlet weak var resendCode: UILabel!
     @IBOutlet weak var slot1: CircleTextField!
     @IBOutlet weak var slot3: CircleTextField!
     @IBOutlet weak var slot2: CircleTextField!
@@ -45,6 +46,9 @@ class OTPVerify: UIViewController, UITextFieldDelegate{
         slot3.delegate = self
         slot4.delegate = self
         slot1.becomeFirstResponder()
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(resendOTP))
+            resendCode.addGestureRecognizer(tap)
     }
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == "continue" {
@@ -79,7 +83,6 @@ class OTPVerify: UIViewController, UITextFieldDelegate{
                 }
             }
         }
-        
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -118,5 +121,8 @@ class OTPVerify: UIViewController, UITextFieldDelegate{
             textField.resignFirstResponder()
         }
         return false
+    }
+    @objc func resendOTP () {
+        sendOTP(userEmail)
     }
 }

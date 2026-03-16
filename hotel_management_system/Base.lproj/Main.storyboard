@@ -587,6 +587,7 @@
                     <navigationItem key="navigationItem" id="4xr-8c-257"/>
                     <connections>
                         <outlet property="emailHolder" destination="paf-dj-agx" id="a0u-cJ-wP8"/>
+                        <outlet property="resendCode" destination="nGH-iU-FbC" id="UGl-ff-AbM"/>
                         <outlet property="slot1" destination="L3g-La-hVm" id="cSY-zj-1wP"/>
                         <outlet property="slot2" destination="OPP-VM-5dt" id="X9Y-Tu-mqA"/>
                         <outlet property="slot3" destination="dYO-ws-bM2" id="ysU-WC-hJQ"/>
@@ -692,7 +693,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="EVb-jB-E19">
                                 <rect key="frame" x="20" y="64" width="210.66666666666666" height="60"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avt" translatesAutoresizingMaskIntoConstraints="NO" id="ZGm-4i-WRo" customClass="CircleAvatar" customModule="hotel_management_system" customModuleProvider="target">
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avt" translatesAutoresizingMaskIntoConstraints="NO" id="ZGm-4i-WRo" customClass="CircleAvatar" customModule="hotel_management_system" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="HM1-qO-TzV"/>
@@ -718,24 +719,24 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="8id-ml-8rg">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="8id-ml-8rg">
                                 <rect key="frame" x="20" y="160" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="JwH-rE-ldn"/>
                                     <constraint firstAttribute="height" constant="30" id="xh2-d5-UuY"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="angle_right" translatesAutoresizingMaskIntoConstraints="NO" id="QKN-MX-yXy">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="angle_right" translatesAutoresizingMaskIntoConstraints="NO" id="QKN-MX-yXy">
                                 <rect key="frame" x="364" y="158" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="3qh-02-9df"/>
                                     <constraint firstAttribute="height" constant="30" id="oWF-lZ-ll7"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Click the &gt; button to show location" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OXQ-rr-kEk">
-                                <rect key="frame" x="75.333333333333343" y="163" width="263.66666666666663" height="20.333333333333343"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click the &gt; button to show location" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OXQ-rr-kEk">
+                                <rect key="frame" x="75.333333333333343" y="163" width="263.33333333333326" height="20.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" name="Default Text Color"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bell" translatesAutoresizingMaskIntoConstraints="NO" id="TpN-HU-2lg" customClass="Icon" customModule="hotel_management_system" customModuleProvider="target">
@@ -746,10 +747,113 @@
                                     <constraint firstAttribute="height" constant="30" id="d9x-qz-Kpl"/>
                                 </constraints>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Zwi-94-NcE">
-                                <rect key="frame" x="87" y="220" width="240" height="128"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recommend for you" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBY-Ql-WVp">
+                                <rect key="frame" x="20" y="218" width="189" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" name="Default Text Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bA8-It-OVc">
+                                <rect key="frame" x="20" y="268" width="75" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="Button Color"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="DpG-EK-nRK">
+                                <rect key="frame" x="0.0" y="334" width="414" height="562"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="Background"/>
+                                <color key="sectionIndexBackgroundColor" name="Background"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RoomCell" rowHeight="500" id="h1k-Wc-4PX" customClass="RoomCell" customModule="hotel_management_system" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="414" height="500"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="h1k-Wc-4PX" id="1sD-Na-PFy">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="test_image" translatesAutoresizingMaskIntoConstraints="NO" id="lvc-Dg-gln">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="143"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="414" id="GnC-nm-kSy"/>
+                                                        <constraint firstAttribute="height" constant="143" id="oks-TM-E2t"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="RoomNumber" text="Room number: 101" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6nQ-k2-A0k">
+                                                    <rect key="frame" x="20" y="167" width="210.33333333333334" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="Floor" text="Floor 4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDl-c1-bmx">
+                                                    <rect key="frame" x="324" y="168" width="69.333333333333314" height="27.666666666666657"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="RoomType" text="Room type: Family" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8G-8i-k5Q">
+                                                    <rect key="frame" x="20" y="215" width="181.66666666666666" height="27.666666666666657"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                    <color key="textColor" name="Default Text Color"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Max guests: 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iLy-mk-y08">
+                                                    <rect key="frame" x="19.999999999999993" y="311" width="106.33333333333331" height="20.333333333333314"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" name="Default Text Color"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bed count: 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZEt-UP-o8G">
+                                                    <rect key="frame" x="20.000000000000007" y="355.33333333333331" width="96.666666666666686" height="20.333333333333314"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" name="Default Text Color"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description: Room description 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XoT-cR-u6D">
+                                                    <rect key="frame" x="19.999999999999986" y="399.66666666666669" width="241.66666666666663" height="20.333333333333314"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" name="Default Text Color"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price: 600.000 VND/night" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MYp-6K-2PH">
+                                                    <rect key="frame" x="20" y="450" width="294.66666666666669" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
+                                                    <color key="textColor" systemColor="systemRedColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="Service" text="- Minibar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rr3-LK-7cx">
+                                                    <rect key="frame" x="20" y="266.66666666666669" width="68.666666666666671" height="20.333333333333314"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" name="Default Text Color"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" name="Background"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="Background"/>
+                                        <connections>
+                                            <outlet property="roomBedCount" destination="ZEt-UP-o8G" id="ulK-19-KBJ"/>
+                                            <outlet property="roomDescription" destination="XoT-cR-u6D" id="OuW-HB-Jot"/>
+                                            <outlet property="roomFloor" destination="YDl-c1-bmx" id="yNa-HX-xwc"/>
+                                            <outlet property="roomImage" destination="lvc-Dg-gln" id="Bwj-Ta-oKi"/>
+                                            <outlet property="roomMaxGuests" destination="iLy-mk-y08" id="TeC-NK-OFf"/>
+                                            <outlet property="roomNumber" destination="6nQ-k2-A0k" id="Tu2-sO-msB"/>
+                                            <outlet property="roomPrice" destination="MYp-6K-2PH" id="HhO-5S-Ohv"/>
+                                            <outlet property="roomServices" destination="rr3-LK-7cx" id="J5N-lm-w25"/>
+                                            <outlet property="roomType" destination="S8G-8i-k5Q" id="ISu-rH-1NG"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ZE8-eT-u90"/>
@@ -758,12 +862,18 @@
                             <constraint firstItem="TpN-HU-2lg" firstAttribute="leading" secondItem="EVb-jB-E19" secondAttribute="trailing" constant="130" id="8jH-k9-dz5"/>
                             <constraint firstItem="OXQ-rr-kEk" firstAttribute="centerX" secondItem="XzE-S2-Qe6" secondAttribute="centerX" id="E3U-AT-U4N"/>
                             <constraint firstItem="EVb-jB-E19" firstAttribute="leading" secondItem="ZE8-eT-u90" secondAttribute="leading" constant="20" id="MXr-JC-X4U"/>
+                            <constraint firstItem="8id-ml-8rg" firstAttribute="top" secondItem="EVb-jB-E19" secondAttribute="bottom" constant="36" id="c6W-76-dER"/>
+                            <constraint firstItem="QKN-MX-yXy" firstAttribute="leading" secondItem="OXQ-rr-kEk" secondAttribute="trailing" constant="25.329999999999998" id="de7-7C-icN"/>
+                            <constraint firstItem="OXQ-rr-kEk" firstAttribute="top" secondItem="EVb-jB-E19" secondAttribute="bottom" constant="39" id="fgc-qN-YDM"/>
+                            <constraint firstItem="8id-ml-8rg" firstAttribute="leading" secondItem="ZE8-eT-u90" secondAttribute="leading" constant="20" id="iil-e1-eot"/>
                             <constraint firstItem="EVb-jB-E19" firstAttribute="top" secondItem="ZE8-eT-u90" secondAttribute="top" constant="20" id="io1-wQ-47Q"/>
                             <constraint firstItem="OXQ-rr-kEk" firstAttribute="leading" secondItem="8id-ml-8rg" secondAttribute="trailing" constant="25.329999999999998" id="oEY-BW-1KW"/>
                             <constraint firstItem="TpN-HU-2lg" firstAttribute="top" secondItem="ZE8-eT-u90" secondAttribute="top" constant="35" id="ppd-fC-5fO"/>
+                            <constraint firstItem="QKN-MX-yXy" firstAttribute="top" secondItem="TpN-HU-2lg" secondAttribute="bottom" constant="49" id="v3Z-yI-AG0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dGh-pA-PcW"/>
+                    <size key="freeformSize" width="414" height="896"/>
                     <connections>
                         <outlet property="addressHolder" destination="xwx-ft-TLF" id="0ZJ-oj-4wE"/>
                         <outlet property="avatarImage" destination="ZGm-4i-WRo" id="O8x-1e-p9Q"/>
@@ -771,6 +881,7 @@
                         <outlet property="location2" destination="QKN-MX-yXy" id="Iiu-Ob-kFs"/>
                         <outlet property="nameHolder" destination="Dip-il-zfg" id="PFA-xr-4bZ"/>
                         <outlet property="notification" destination="TpN-HU-2lg" id="0qL-QO-22f"/>
+                        <outlet property="tableView" destination="DpG-EK-nRK" id="AE6-J3-hQZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0XO-4c-cZW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -911,6 +1022,7 @@
         <image name="avt" width="960" height="944"/>
         <image name="bell" width="512" height="512"/>
         <image name="location" width="512" height="512"/>
+        <image name="test_image" width="6000" height="4000"/>
         <namedColor name="Background">
             <color red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -923,11 +1035,11 @@
         <namedColor name="Text Field Color">
             <color red="0.61176470588235299" green="0.64313725490196083" blue="0.6705882352941176" alpha="0.25999999046325684" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
