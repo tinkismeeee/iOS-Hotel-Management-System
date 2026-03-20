@@ -41,10 +41,10 @@ class Login: UIViewController {
         
         if (email.isEmpty || password.isEmpty) {
 //            present(alert, animated: true, completion: nil)
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "home")
-            vc.modalPresentationStyle = .fullScreen
-            present(vc, animated: true)
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let vc = storyboard.instantiateViewController(withIdentifier: "home")
+//            vc.modalPresentationStyle = .fullScreen
+//            present(vc, animated: true)
             return
         }
         else {

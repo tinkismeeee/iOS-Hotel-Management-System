@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import Alamofire
+import Kingfisher
+import CoreLocation
 
-class Home: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class Home: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,CLLocationManagerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var avatarImage: CircleAvatar!
@@ -15,10 +18,12 @@ class Home: UIViewController, UIImagePickerControllerDelegate, UINavigationContr
     @IBOutlet weak var location2: UIImageView!
     @IBOutlet weak var location1: UIImageView!
     @IBOutlet weak var addressHolder: UILabel!
+    @IBOutlet weak var location: UIImageView!
     @IBOutlet weak var nameHolder: UILabel!
-    
+    var filteredRooms: [RoomModel] = []
     var rooms: [RoomModel] = []
     var roomImageUrls: [String] = []
+    let locationManager = CLLocationManager()
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -29,6 +34,24 @@ class Home: UIViewController, UIImagePickerControllerDelegate, UINavigationContr
         let tap = UITapGestureRecognizer(target: self, action: #selector(changeAvatar))
         avatarImage.addGestureRecognizer(tap)
         loadRooms()
+        loadRoomImages()
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        location.isUserInteractionEnabled = true
+        let tap1 = UITapGestureRecognizer(target: self, action: #selector(getLocation))
+        location.addGestureRecognizer(tap1)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    func loadRoomImages() {
+        roomImageUrls.removeAll()
         RoomImageService.shared.getRoomImage { data in
             guard let data = data else {
                 print("Get room images failed")
@@ -42,9 +65,9 @@ class Home: UIViewController, UIImagePickerControllerDelegate, UINavigationContr
                                 self.roomImageUrls.append(regular)
                             }
                         }
-//                        DispatchQueue.main.async {
-//                            print(self.roomImageUrls)
-//                        }
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
                     }
                 }
             } catch {
@@ -52,16 +75,34 @@ class Home: UIViewController, UIImagePickerControllerDelegate, UINavigationContr
             }
         }
     }
-    
     func loadRooms() {
         RoomService.fetchRooms { rooms in
             DispatchQueue.main.async {
                 self.rooms = rooms
+                self.filteredRooms = rooms
                 self.tableView.reloadData()
             }
         }
     }
-
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last else { return }
+        manager.stopUpdatingLocation()
+        let geocoder = CLGeocoder()
+        geocoder.reverseGeocodeLocation(location) { placemarks, error in
+            guard let place = placemarks?.first else { return }
+            let city = place.locality ?? ""
+            let country = place.country ?? ""
+            DispatchQueue.main.async {
+                self.addressHolder.text = "\(city), \(country)"
+            }
+        }
+    }
+    
+    @objc func getLocation() {
+        locationManager.startUpdatingLocation()
+    }
+    
     @objc func changeAvatar() {
         let picker = UIImagePickerController()
         picker.sourceType = .photoLibrary
@@ -76,16 +117,40 @@ class Home: UIViewController, UIImagePickerControllerDelegate, UINavigationContr
         picker.dismiss(animated: true)
     }
     
+    func filterRooms(type: String) {
+        filteredRooms = rooms.filter { $0.room_type_name == type }
+        loadRoomImages()
+        tableView.reloadData()
+    }
+    
+    @IBAction func standardBtn(_ sender: Any) {
+        filterRooms(type: "Standard")
+    }
+    
+    @IBAction func familyBtn(_ sender: Any) {
+        filterRooms(type: "Family")
+    }
+    
+    @IBAction func deluxeBtn(_ sender: Any) {
+        filterRooms(type: "Deluxe")
+    }
+    @IBAction func businessBtn(_ sender: Any) {
+        filterRooms(type: "Business")
+    }
+    
 }
 extension Home: UITableViewDataSource, UITableViewDelegate {
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return rooms.count
+        return filteredRooms.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let room = rooms[indexPath.row]
+        let room = filteredRooms[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "RoomCell", for: indexPath) as! RoomCell
+        if indexPath.row < roomImageUrls.count {
+            let urlString = roomImageUrls.randomElement()
+            cell.roomImage.kf.setImage(with: URL(string: urlString ?? ""))
+        }
         cell.roomNumber.text = "Room number: \(room.room_number)"
         cell.roomFloor.text = "Floor \(room.floor)"
         cell.roomType.text = "Type: \(room.room_type_name)"
@@ -94,5 +159,15 @@ extension Home: UITableViewDataSource, UITableViewDelegate {
         cell.roomDescription.text = "\(room.description)"
         cell.roomPrice.text = "Price: \(room.price_per_night) VND/night"
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let room = filteredRooms[indexPath.row]
+        print(room)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "RoomDetail") as! RoomDetail
+        vc.room = room
+        vc.roomImage = roomImageUrls[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

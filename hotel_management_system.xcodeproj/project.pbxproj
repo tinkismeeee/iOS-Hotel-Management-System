@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		046516D52F6B7A5100F30466 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 046516D42F6B7A5100F30466 /* Kingfisher */; };
 		04B90A092F60D3DF00E364C9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 04B90A082F60D3DF00E364C9 /* Alamofire */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				046516D52F6B7A5100F30466 /* Kingfisher in Frameworks */,
 				04B90A092F60D3DF00E364C9 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,6 +86,7 @@
 			name = hotel_management_system;
 			packageProductDependencies = (
 				04B90A082F60D3DF00E364C9 /* Alamofire */,
+				046516D42F6B7A5100F30466 /* Kingfisher */,
 			);
 			productName = hotel_management_system;
 			productReference = 044160B32F60CD61006AC7F2 /* hotel_management_system.app */;
@@ -115,6 +118,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				04B90A072F60D3DF00E364C9 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				046516D32F6B7A5100F30466 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 044160B42F60CD61006AC7F2 /* Products */;
@@ -358,6 +362,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		046516D32F6B7A5100F30466 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.8.0;
+			};
+		};
 		04B90A072F60D3DF00E364C9 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -369,6 +381,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		046516D42F6B7A5100F30466 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 046516D32F6B7A5100F30466 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		04B90A082F60D3DF00E364C9 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 04B90A072F60D3DF00E364C9 /* XCRemoteSwiftPackageReference "Alamofire" */;

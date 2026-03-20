@@ -70,7 +70,11 @@ class OTPVerify: UIViewController, UITextFieldDelegate{
         OtpService.shared.verifyOtp(email: userEmail, otp: code) { success, message in
             if success {
                 print("Verify OK")
-                self.performSegue(withIdentifier: "continue", sender: nil)
+//                self.performSegue(withIdentifier: "continue", sender: nil)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let nav = storyboard.instantiateViewController(withIdentifier: "HomeNav") as! UINavigationController
+                nav.modalPresentationStyle = .fullScreen
+                self.present(nav, animated: true)
             }
             else {
                 print("Error:", message)
