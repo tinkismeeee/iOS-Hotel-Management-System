@@ -148,8 +148,8 @@ extension Home: UITableViewDataSource, UITableViewDelegate {
         let room = filteredRooms[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "RoomCell", for: indexPath) as! RoomCell
         if indexPath.row < roomImageUrls.count {
-            let urlString = roomImageUrls.randomElement()
-            cell.roomImage.kf.setImage(with: URL(string: urlString ?? ""))
+            let urlString = roomImageUrls[indexPath.row % roomImageUrls.count]
+            cell.roomImage.kf.setImage(with: URL(string: urlString))
         }
         cell.roomNumber.text = "Room number: \(room.room_number)"
         cell.roomFloor.text = "Floor \(room.floor)"
@@ -167,7 +167,7 @@ extension Home: UITableViewDataSource, UITableViewDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "RoomDetail") as! RoomDetail
         vc.room = room
-        vc.roomImage = roomImageUrls[indexPath.row]
+        vc.roomImage = roomImageUrls[indexPath.row % roomImageUrls.count]
         navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -999,20 +999,20 @@
         <scene sceneID="BAK-2U-zEr">
             <objects>
                 <viewController storyboardIdentifier="RoomDetail" id="Xfd-Ld-sUV" customClass="RoomDetail" customModule="hotel_management_system" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="fH2-uu-Yuv">
+                    <view key="view" contentMode="scaleToFill" id="fH2-uu-Yuv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QmU-ZM-vpf">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QmU-ZM-vpf">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uFb-4y-Ddz">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uFb-4y-Ddz">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avt" translatesAutoresizingMaskIntoConstraints="NO" id="PW4-oH-Dol">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avt" translatesAutoresizingMaskIntoConstraints="NO" id="PW4-oH-Dol">
                                                 <rect key="frame" x="20" y="20" width="374" height="219"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="374" id="LG2-vU-UX5"/>
+                                                    <constraint firstAttribute="width" constant="374" id="Tz1-BL-NBt"/>
                                                     <constraint firstAttribute="height" constant="219" id="ujU-xt-QAT"/>
                                                 </constraints>
                                             </imageView>
@@ -1125,6 +1125,7 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFa-aa-QKh">
                                                         <rect key="frame" x="22" y="25" width="135" height="37"/>
+                                                        <color key="backgroundColor" name="White"/>
                                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" imagePlacement="leading" imagePadding="15">
@@ -1139,9 +1140,13 @@
                                                                 </fragment>
                                                             </attributedString>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="serviceSelected:" destination="Xfd-Ld-sUV" eventType="touchUpInside" id="dun-1R-AYp"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCM-XR-x1a">
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCM-XR-x1a">
                                                         <rect key="frame" x="197" y="25" width="144" height="37"/>
+                                                        <color key="backgroundColor" name="White"/>
                                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" imagePlacement="leading" imagePadding="15">
@@ -1156,9 +1161,13 @@
                                                                 </fragment>
                                                             </attributedString>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="serviceSelected:" destination="Xfd-Ld-sUV" eventType="touchUpInside" id="J15-mC-SB0"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ga-Ne-eMp">
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ga-Ne-eMp">
                                                         <rect key="frame" x="21.999999999999993" y="87" width="105.33333333333331" height="37"/>
+                                                        <color key="backgroundColor" name="White"/>
                                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" imagePadding="15">
@@ -1173,9 +1182,13 @@
                                                                 </fragment>
                                                             </attributedString>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="serviceSelected:" destination="Xfd-Ld-sUV" eventType="touchUpInside" id="zg4-HW-upa"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GEk-4c-C3Z">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GEk-4c-C3Z">
                                                         <rect key="frame" x="197" y="87" width="104" height="37"/>
+                                                        <color key="backgroundColor" name="White"/>
                                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" imagePadding="15">
@@ -1190,9 +1203,13 @@
                                                                 </fragment>
                                                             </attributedString>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="serviceSelected:" destination="Xfd-Ld-sUV" eventType="touchUpInside" id="T6D-2a-REQ"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSL-YR-5FQ">
+                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSL-YR-5FQ">
                                                         <rect key="frame" x="22.000000000000007" y="149" width="111.66666666666669" height="37.333333333333343"/>
+                                                        <color key="backgroundColor" name="White"/>
                                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" imagePadding="15">
@@ -1207,9 +1224,13 @@
                                                                 </fragment>
                                                             </attributedString>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="serviceSelected:" destination="Xfd-Ld-sUV" eventType="touchUpInside" id="0lA-02-gKA"/>
+                                                        </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r0V-b2-BUk">
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r0V-b2-BUk">
                                                         <rect key="frame" x="197" y="149" width="131" height="37.333333333333343"/>
+                                                        <color key="backgroundColor" name="White"/>
                                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" imagePadding="15">
@@ -1224,6 +1245,9 @@
                                                                 </fragment>
                                                             </attributedString>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="serviceSelected:" destination="Xfd-Ld-sUV" eventType="touchUpInside" id="XPP-g3-rys"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.91895748870000005" green="0.91895748870000005" blue="0.91895748870000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1303,7 +1327,7 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1l9-6e-n2p">
-                                                <rect key="frame" x="20" y="1096.3333333333333" width="360" height="52"/>
+                                                <rect key="frame" x="19" y="1140" width="360" height="52"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="360" id="YP4-53-0lf"/>
                                                     <constraint firstAttribute="height" constant="52" id="nWB-Px-nHR"/>
@@ -1320,34 +1344,33 @@
                                         </subviews>
                                         <color key="backgroundColor" name="Background"/>
                                         <constraints>
-                                            <constraint firstItem="fiu-mq-Inc" firstAttribute="leading" secondItem="uFb-4y-Ddz" secondAttribute="leading" constant="20" id="7SW-kO-VRp"/>
-                                            <constraint firstItem="OAp-QH-gRT" firstAttribute="leading" secondItem="uFb-4y-Ddz" secondAttribute="leading" constant="19" id="AHT-Py-hRa"/>
-                                            <constraint firstItem="8lt-Rx-dV9" firstAttribute="top" secondItem="laz-kK-oCv" secondAttribute="bottom" constant="20" id="EgX-vw-SEw"/>
-                                            <constraint firstItem="NdZ-5j-0wV" firstAttribute="top" secondItem="8lt-Rx-dV9" secondAttribute="bottom" constant="20" id="F6R-oL-n5o"/>
-                                            <constraint firstItem="laz-kK-oCv" firstAttribute="top" secondItem="zmn-4p-qJP" secondAttribute="bottom" constant="25" id="H8R-YN-aUf"/>
-                                            <constraint firstItem="OAp-QH-gRT" firstAttribute="top" secondItem="oxb-gW-XOd" secondAttribute="bottom" constant="20" id="Jls-RP-fhk"/>
-                                            <constraint firstItem="fhO-VI-UZa" firstAttribute="top" secondItem="fiu-mq-Inc" secondAttribute="bottom" constant="20" id="Kx0-v6-IvB"/>
-                                            <constraint firstItem="Id6-up-D3e" firstAttribute="top" secondItem="NdZ-5j-0wV" secondAttribute="bottom" constant="10" id="OSA-fG-SXI"/>
-                                            <constraint firstAttribute="trailing" secondItem="PW4-oH-Dol" secondAttribute="trailing" constant="20" id="PcY-SJ-86j"/>
-                                            <constraint firstItem="q8m-ea-gHf" firstAttribute="top" secondItem="PW4-oH-Dol" secondAttribute="bottom" constant="30" id="Tpc-Yl-LI8"/>
-                                            <constraint firstItem="NdZ-5j-0wV" firstAttribute="leading" secondItem="uFb-4y-Ddz" secondAttribute="leading" constant="20" id="UHV-qx-z3H"/>
-                                            <constraint firstItem="oxb-gW-XOd" firstAttribute="top" secondItem="5sk-6a-bGd" secondAttribute="bottom" constant="20" id="VJc-FI-4XM"/>
-                                            <constraint firstItem="PW4-oH-Dol" firstAttribute="top" secondItem="uFb-4y-Ddz" secondAttribute="top" constant="20" id="XzT-mw-8zs"/>
-                                            <constraint firstItem="PW4-oH-Dol" firstAttribute="leading" secondItem="uFb-4y-Ddz" secondAttribute="leading" constant="20" id="a1b-RQ-Sb4"/>
-                                            <constraint firstItem="zmn-4p-qJP" firstAttribute="top" secondItem="PW4-oH-Dol" secondAttribute="bottom" constant="30" id="c1W-E5-fgH"/>
-                                            <constraint firstAttribute="height" constant="1200" id="cLu-zf-dkr"/>
-                                            <constraint firstItem="fiu-mq-Inc" firstAttribute="top" secondItem="OAp-QH-gRT" secondAttribute="bottom" constant="20" id="ddY-go-rsp"/>
-                                            <constraint firstItem="8lt-Rx-dV9" firstAttribute="leading" secondItem="uFb-4y-Ddz" secondAttribute="leading" constant="20" id="gLc-Ke-M9h"/>
-                                            <constraint firstItem="fhO-VI-UZa" firstAttribute="leading" secondItem="uFb-4y-Ddz" secondAttribute="leading" constant="19" id="hTA-X2-Bz2"/>
-                                            <constraint firstItem="q8m-ea-gHf" firstAttribute="leading" secondItem="zmn-4p-qJP" secondAttribute="trailing" constant="166" id="hpV-DN-Qa7"/>
-                                            <constraint firstItem="laz-kK-oCv" firstAttribute="leading" secondItem="uFb-4y-Ddz" secondAttribute="leading" constant="20" id="hzc-jD-nEH"/>
-                                            <constraint firstItem="1l9-6e-n2p" firstAttribute="leading" secondItem="uFb-4y-Ddz" secondAttribute="leading" constant="20" id="j6U-Xv-l4f"/>
-                                            <constraint firstItem="5sk-6a-bGd" firstAttribute="top" secondItem="Id6-up-D3e" secondAttribute="bottom" constant="20" id="qvv-Pb-hLF"/>
-                                            <constraint firstItem="zmn-4p-qJP" firstAttribute="leading" secondItem="uFb-4y-Ddz" secondAttribute="leading" constant="20" id="uU2-6U-5fG"/>
-                                            <constraint firstItem="Id6-up-D3e" firstAttribute="leading" secondItem="uFb-4y-Ddz" secondAttribute="leading" constant="20" id="vJ2-72-63H"/>
-                                            <constraint firstItem="5sk-6a-bGd" firstAttribute="leading" secondItem="uFb-4y-Ddz" secondAttribute="leading" constant="20" id="vpV-6p-BsA"/>
-                                            <constraint firstItem="1l9-6e-n2p" firstAttribute="top" secondItem="fhO-VI-UZa" secondAttribute="bottom" constant="40" id="w47-UH-zBY"/>
-                                            <constraint firstItem="oxb-gW-XOd" firstAttribute="leading" secondItem="uFb-4y-Ddz" secondAttribute="leading" constant="20" id="w6o-xi-Kgo"/>
+                                            <constraint firstItem="fiu-mq-Inc" firstAttribute="top" secondItem="OAp-QH-gRT" secondAttribute="bottom" constant="20" id="0Ht-u7-Fvi"/>
+                                            <constraint firstItem="NdZ-5j-0wV" firstAttribute="top" secondItem="8lt-Rx-dV9" secondAttribute="bottom" constant="20" id="33n-Km-2uI"/>
+                                            <constraint firstItem="fhO-VI-UZa" firstAttribute="leading" secondItem="uFb-4y-Ddz" secondAttribute="leading" constant="19" id="3Eb-QK-DKE"/>
+                                            <constraint firstItem="OAp-QH-gRT" firstAttribute="top" secondItem="oxb-gW-XOd" secondAttribute="bottom" constant="20" id="555-Lv-ZkP"/>
+                                            <constraint firstItem="5sk-6a-bGd" firstAttribute="leading" secondItem="uFb-4y-Ddz" secondAttribute="leading" constant="20" id="8HI-yo-j2V"/>
+                                            <constraint firstItem="OAp-QH-gRT" firstAttribute="leading" secondItem="uFb-4y-Ddz" secondAttribute="leading" constant="19" id="8Yk-GT-X4j"/>
+                                            <constraint firstItem="PW4-oH-Dol" firstAttribute="top" secondItem="uFb-4y-Ddz" secondAttribute="top" constant="20" id="BH6-w8-9y6"/>
+                                            <constraint firstItem="8lt-Rx-dV9" firstAttribute="top" secondItem="laz-kK-oCv" secondAttribute="bottom" constant="20" id="IAa-Q8-psr"/>
+                                            <constraint firstItem="5sk-6a-bGd" firstAttribute="top" secondItem="Id6-up-D3e" secondAttribute="bottom" constant="20" id="Igt-ZD-2TJ"/>
+                                            <constraint firstItem="1l9-6e-n2p" firstAttribute="leading" secondItem="uFb-4y-Ddz" secondAttribute="leading" constant="19" id="LA0-70-kQV"/>
+                                            <constraint firstItem="q8m-ea-gHf" firstAttribute="top" secondItem="PW4-oH-Dol" secondAttribute="bottom" constant="30" id="Ok4-uj-zKC"/>
+                                            <constraint firstItem="zmn-4p-qJP" firstAttribute="leading" secondItem="uFb-4y-Ddz" secondAttribute="leading" constant="20" id="PIr-hX-2Br"/>
+                                            <constraint firstItem="NdZ-5j-0wV" firstAttribute="leading" secondItem="uFb-4y-Ddz" secondAttribute="leading" constant="20" id="Rdd-n7-ac9"/>
+                                            <constraint firstItem="fhO-VI-UZa" firstAttribute="top" secondItem="fiu-mq-Inc" secondAttribute="bottom" constant="20" id="TFR-eJ-WIj"/>
+                                            <constraint firstItem="zmn-4p-qJP" firstAttribute="top" secondItem="PW4-oH-Dol" secondAttribute="bottom" constant="30" id="ZOW-R7-kpY"/>
+                                            <constraint firstItem="Id6-up-D3e" firstAttribute="leading" secondItem="uFb-4y-Ddz" secondAttribute="leading" constant="20" id="dfN-0p-h6b"/>
+                                            <constraint firstItem="oxb-gW-XOd" firstAttribute="top" secondItem="5sk-6a-bGd" secondAttribute="bottom" constant="20" id="epa-Wo-hDp"/>
+                                            <constraint firstItem="PW4-oH-Dol" firstAttribute="leading" secondItem="uFb-4y-Ddz" secondAttribute="leading" constant="20" id="h8f-rA-s5K"/>
+                                            <constraint firstItem="laz-kK-oCv" firstAttribute="top" secondItem="zmn-4p-qJP" secondAttribute="bottom" constant="25" id="hFr-KW-vAz"/>
+                                            <constraint firstItem="fiu-mq-Inc" firstAttribute="leading" secondItem="uFb-4y-Ddz" secondAttribute="leading" constant="20" id="rLZ-6P-rHp"/>
+                                            <constraint firstItem="laz-kK-oCv" firstAttribute="leading" secondItem="uFb-4y-Ddz" secondAttribute="leading" constant="20" id="tHH-Ty-0bR"/>
+                                            <constraint firstAttribute="trailing" secondItem="PW4-oH-Dol" secondAttribute="trailing" constant="20" id="u02-XL-hXd"/>
+                                            <constraint firstItem="Id6-up-D3e" firstAttribute="top" secondItem="NdZ-5j-0wV" secondAttribute="bottom" constant="10" id="uub-5c-DcN"/>
+                                            <constraint firstItem="8lt-Rx-dV9" firstAttribute="leading" secondItem="uFb-4y-Ddz" secondAttribute="leading" constant="20" id="v0C-lA-tnT"/>
+                                            <constraint firstItem="q8m-ea-gHf" firstAttribute="leading" secondItem="zmn-4p-qJP" secondAttribute="trailing" constant="166" id="xZd-Yz-OrO"/>
+                                            <constraint firstItem="1l9-6e-n2p" firstAttribute="top" secondItem="fhO-VI-UZa" secondAttribute="bottom" constant="83.670000000000002" id="yyY-nk-Tpp"/>
+                                            <constraint firstItem="oxb-gW-XOd" firstAttribute="leading" secondItem="uFb-4y-Ddz" secondAttribute="leading" constant="20" id="zpx-NE-HM5"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1375,14 +1398,20 @@
                     <navigationItem key="navigationItem" id="TuN-YY-BdX"/>
                     <connections>
                         <outlet property="bedCount" destination="TDj-ye-CCJ" id="Y8a-WE-VLp"/>
+                        <outlet property="breakfast" destination="ZCM-XR-x1a" id="dfP-sG-enW"/>
                         <outlet property="checkin" destination="lRb-UT-ikP" id="bl8-Ar-Ukd"/>
                         <outlet property="checkout" destination="SGw-nU-oOo" id="bzY-kL-nx1"/>
+                        <outlet property="dinner" destination="iSL-YR-5FQ" id="hs1-G0-Zvk"/>
+                        <outlet property="laundry" destination="UFa-aa-QKh" id="f11-2v-WVm"/>
                         <outlet property="maxGuests" destination="4w0-jZ-iku" id="Ti7-aR-O4M"/>
+                        <outlet property="minibar" destination="r0V-b2-BUk" id="EUa-Me-ac4"/>
                         <outlet property="roomDescription" destination="XJx-xC-7JS" id="AlC-WY-Oz8"/>
                         <outlet property="roomFloor" destination="q8m-ea-gHf" id="XFn-qE-8Zr"/>
                         <outlet property="roomImg" destination="PW4-oH-Dol" id="4SE-J1-XCs"/>
                         <outlet property="roomNumber" destination="zmn-4p-qJP" id="hWf-aC-LxF"/>
                         <outlet property="roomType" destination="laz-kK-oCv" id="xxz-lO-fuq"/>
+                        <outlet property="spa" destination="GEk-4c-C3Z" id="bra-a1-phD"/>
+                        <outlet property="taxi" destination="0Ga-Ne-eMp" id="7qg-w0-VCB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b1g-BZ-0P7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
