@@ -29,14 +29,14 @@ class RoomDetail: UIViewController {
     @IBOutlet weak var roomDescription: UILabel!
     @IBOutlet weak var checkin: UIDatePicker!
     @IBOutlet weak var checkout: UIDatePicker!
-    
     @IBOutlet weak var laundry: UIButton!
     @IBOutlet weak var spa: UIButton!
     @IBOutlet weak var taxi: UIButton!
     @IBOutlet weak var breakfast: UIButton!
     @IBOutlet weak var minibar: UIButton!
     @IBOutlet weak var dinner: UIButton!
-    
+    let bookFailAlert = UIAlertController(title: "Error", message: "Check-out must be after check-in", preferredStyle: .alert)
+    let bookSuccessAlert = UIAlertController(title: "Successfully", message: "Book successfully", preferredStyle: .alert)
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if let urlString = roomImage {
@@ -45,6 +45,7 @@ class RoomDetail: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        // print("Room data: \(room) | Room image: \(roomImage)")
         // Do any additional setup after loading the view.
         roomNumber.text = "Room: \(room?.room_number ?? "")"
         roomFloor.text = "Floor: \(room?.floor ?? 0)"
@@ -56,7 +57,11 @@ class RoomDetail: UIViewController {
         roomImg.layer.cornerRadius = 12
         roomImg.clipsToBounds = true
         addRGBBorder()
-    
+        let okAction = UIAlertAction(title: "OK", style: .default) {
+            (action) in print("")
+        }
+        bookSuccessAlert.addAction(okAction)
+        bookFailAlert.addAction(okAction)
     }
     func addRGBBorder() {
         let gradient = CAGradientLayer()
@@ -96,7 +101,7 @@ class RoomDetail: UIViewController {
             sender.setTitleColor(.black, for: .normal)
             selectedServices.removeAll { $0 == service }
         }
-        print(selectedServices)
+        // print(selectedServices)
     }
     func serviceFromButton(_ button: UIButton) -> Service? {
         switch button {
@@ -115,5 +120,24 @@ class RoomDetail: UIViewController {
             default:
                 return nil
         }
+    }
+    
+    @IBAction func bookBtn(_ sender: Any) {
+        let checkinTime = checkin.date
+        let checkoutTime = checkout.date
+//        print("\(checkinTime) - \(checkoutTime)")
+        if checkinTime >= checkoutTime {
+            present(bookFailAlert, animated: true)
+            return
+        }
+        // print("Room data: \(room) | Room image: \(roomImage)")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "checkout") as! Checkout
+        vc.roomData = room
+        vc.roomImage = roomImage
+        vc.checkInTime = checkinTime
+        vc.checkOutTime = checkoutTime
+        vc.optionalServicesList = selectedServices.map { $0.rawValue }
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

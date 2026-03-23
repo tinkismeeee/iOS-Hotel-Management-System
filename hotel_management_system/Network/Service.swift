@@ -31,7 +31,7 @@ class Service {
     }
     func getCustomerByEmail(email: String, completion: @escaping(Result<Data?, AFError>) -> Void) {
         AF.request(ForgotPasswordRouter.getCustomerByEmail(email: email)).validate().response { response in
-                completion(response.result)
+            completion(response.result)
         }
     }
     func updatePassword(body: UpdatePasswordModel,
@@ -41,6 +41,16 @@ class Service {
             .response { response in
                 completion(response.result)
             }
+    }
+    func getAllPromotion(completion: @escaping (Result<Data?, AFError>) -> Void) {
+        
+        AF.request(LoginRouter.getAllCustomers)
+            .validate()
+            .response { response in
+                completion(response.result)
+                
+            }
+        
     }
 }
 
