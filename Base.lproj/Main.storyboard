@@ -140,8 +140,8 @@
                                     <color key="baseBackgroundColor" name="Button Color"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="btnLoginTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zpx-cK-ukJ"/>
                                     <action selector="submitBtn:" destination="pnT-yL-Bpd" eventType="touchUpInside" id="t2G-CO-sZE"/>
-                                    <segue destination="gVA-yA-Gsq" kind="show" id="0ca-LL-2rk"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -597,7 +597,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E2a-fZ-dqG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2648" y="-29"/>
+            <point key="canvasLocation" x="2648" y="-80"/>
         </scene>
         <!--Forgot Password-->
         <scene sceneID="nWZ-9O-C1n">
@@ -882,6 +882,11 @@
                                                 <color key="tintColor" name="White"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Standard"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="7"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="standardBtn:" destination="gVA-yA-Gsq" eventType="touchUpInside" id="0eU-RR-S96"/>
                                                 </connections>
@@ -892,6 +897,11 @@
                                                 <color key="tintColor" name="White"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="person.3.fill" catalog="system" imagePlacement="leading" title="Family" imagePadding="9"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="7"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="familyBtn:" destination="gVA-yA-Gsq" eventType="touchUpInside" id="WWm-mt-420"/>
                                                 </connections>
@@ -902,6 +912,11 @@
                                                 <color key="tintColor" name="White"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="star.fill" catalog="system" title="Deluxe" imagePadding="9"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="7"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="deluxeBtn:" destination="gVA-yA-Gsq" eventType="touchUpInside" id="qrC-1w-P4M"/>
                                                 </connections>
@@ -912,6 +927,11 @@
                                                 <color key="tintColor" name="White"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="suitcase.fill" catalog="system" title="Business" imagePadding="9"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="businessBtn:" destination="gVA-yA-Gsq" eventType="touchUpInside" id="gJv-fI-AZM"/>
                                                 </connections>
@@ -988,7 +1008,6 @@
                         <outlet property="nameHolder" destination="Dip-il-zfg" id="PFA-xr-4bZ"/>
                         <outlet property="notification" destination="TpN-HU-2lg" id="0qL-QO-22f"/>
                         <outlet property="tableView" destination="DpG-EK-nRK" id="AE6-J3-hQZ"/>
-                        <segue destination="Xfd-Ld-sUV" kind="push" id="Lf3-FG-vwo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0XO-4c-cZW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -998,16 +1017,16 @@
         <!--Room Detail-->
         <scene sceneID="BAK-2U-zEr">
             <objects>
-                <viewController storyboardIdentifier="RoomDetail" id="Xfd-Ld-sUV" customClass="RoomDetail" customModule="hotel_management_system" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RoomDetail" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Xfd-Ld-sUV" customClass="RoomDetail" customModule="hotel_management_system" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fH2-uu-Yuv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QmU-ZM-vpf">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uFb-4y-Ddz">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1186.6666666666667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avt" translatesAutoresizingMaskIntoConstraints="NO" id="PW4-oH-Dol">
                                                 <rect key="frame" x="20" y="20" width="374" height="219"/>
@@ -1140,6 +1159,11 @@
                                                                 </fragment>
                                                             </attributedString>
                                                         </buttonConfiguration>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="serviceSelected:" destination="Xfd-Ld-sUV" eventType="touchUpInside" id="dun-1R-AYp"/>
                                                         </connections>
@@ -1161,6 +1185,11 @@
                                                                 </fragment>
                                                             </attributedString>
                                                         </buttonConfiguration>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="serviceSelected:" destination="Xfd-Ld-sUV" eventType="touchUpInside" id="J15-mC-SB0"/>
                                                         </connections>
@@ -1182,6 +1211,11 @@
                                                                 </fragment>
                                                             </attributedString>
                                                         </buttonConfiguration>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="serviceSelected:" destination="Xfd-Ld-sUV" eventType="touchUpInside" id="zg4-HW-upa"/>
                                                         </connections>
@@ -1203,17 +1237,21 @@
                                                                 </fragment>
                                                             </attributedString>
                                                         </buttonConfiguration>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="serviceSelected:" destination="Xfd-Ld-sUV" eventType="touchUpInside" id="T6D-2a-REQ"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSL-YR-5FQ">
-                                                        <rect key="frame" x="22.000000000000007" y="149" width="111.66666666666669" height="37.333333333333343"/>
+                                                        <rect key="frame" x="21.999999999999993" y="149" width="127.33333333333331" height="37.333333333333343"/>
                                                         <color key="backgroundColor" name="White"/>
                                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" imagePadding="15">
-                                                            <imageReference key="image" image="spoon.serving" catalog="system" variableValue="1"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="carrot" catalog="system" imagePadding="15">
                                                             <attributedString key="attributedTitle">
                                                                 <fragment content="Dinner">
                                                                     <attributes>
@@ -1224,6 +1262,11 @@
                                                                 </fragment>
                                                             </attributedString>
                                                         </buttonConfiguration>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="serviceSelected:" destination="Xfd-Ld-sUV" eventType="touchUpInside" id="0lA-02-gKA"/>
                                                         </connections>
@@ -1245,6 +1288,11 @@
                                                                 </fragment>
                                                             </attributedString>
                                                         </buttonConfiguration>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="serviceSelected:" destination="Xfd-Ld-sUV" eventType="touchUpInside" id="XPP-g3-rys"/>
                                                         </connections>
@@ -1269,9 +1317,9 @@
                                                     <constraint firstItem="GEk-4c-C3Z" firstAttribute="leading" secondItem="r0V-b2-BUk" secondAttribute="leading" id="jjd-KW-nDZ"/>
                                                     <constraint firstItem="ZCM-XR-x1a" firstAttribute="leading" secondItem="UFa-aa-QKh" secondAttribute="trailing" constant="40" id="luM-bq-f2X"/>
                                                     <constraint firstAttribute="width" constant="360" id="mYr-cr-CQb"/>
+                                                    <constraint firstItem="r0V-b2-BUk" firstAttribute="leading" secondItem="iSL-YR-5FQ" secondAttribute="trailing" constant="47.670000000000002" id="qzw-Ok-onc"/>
                                                     <constraint firstItem="ZCM-XR-x1a" firstAttribute="top" secondItem="oxb-gW-XOd" secondAttribute="top" constant="25" id="syU-RT-2Nc"/>
                                                     <constraint firstAttribute="trailing" secondItem="ZCM-XR-x1a" secondAttribute="trailing" constant="19" id="thG-af-mde"/>
-                                                    <constraint firstItem="r0V-b2-BUk" firstAttribute="leading" secondItem="iSL-YR-5FQ" secondAttribute="trailing" constant="63.329999999999998" id="wRU-WO-BJm"/>
                                                     <constraint firstAttribute="bottom" secondItem="iSL-YR-5FQ" secondAttribute="bottom" constant="25" id="yfb-KC-SJ9"/>
                                                 </constraints>
                                             </view>
@@ -1417,7 +1465,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b1g-BZ-0P7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4522" y="652"/>
+            <point key="canvasLocation" x="4455" y="652"/>
         </scene>
         <!--Checkout-->
         <scene sceneID="RGM-h0-iqh">
@@ -1568,8 +1616,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="32.000 VND" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qog-bW-Y4p">
-                                        <rect key="frame" x="264.66666666666674" y="98.666666666666742" width="94.333333333333314" height="20.333333333333329"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qog-bW-Y4p">
+                                        <rect key="frame" x="247" y="99" width="112" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -1582,8 +1630,8 @@
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="6.666.666 VND" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOc-Rb-K5j">
-                                        <rect key="frame" x="209" y="161.33333333333337" width="148" height="24"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOc-Rb-K5j">
+                                        <rect key="frame" x="131" y="161" width="226" height="24"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1620,6 +1668,9 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Apply"/>
+                                <connections>
+                                    <action selector="applyPromotion:" destination="7f3-jL-hoe" eventType="touchUpInside" id="TxZ-l7-Vi4"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Rli-nP-8L0"/>
@@ -1675,6 +1726,64 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="61L-Ym-TSY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5392.753623188406" y="651.5625"/>
+        </scene>
+        <!--Rcode-->
+        <scene sceneID="9i6-nC-PC1">
+            <objects>
+                <viewController storyboardIdentifier="qrcode" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wSe-oM-4Hh" customClass="QRcode" customModule="hotel_management_system" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hbJ-h1-dCr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HqZ-1G-Pch">
+                                <rect key="frame" x="22" y="774" width="371" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="371" id="VFz-bg-DnV"/>
+                                    <constraint firstAttribute="height" constant="52" id="itj-s9-Dxi"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="I Already Paid" cornerStyle="large">
+                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
+                                    <color key="baseBackgroundColor" name="Button Color"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="bookBtn:" destination="Xfd-Ld-sUV" eventType="touchUpInside" id="21c-ou-NqS"/>
+                                    <action selector="confirmPayment:" destination="7f3-jL-hoe" eventType="touchUpInside" id="ogr-EJ-oGJ"/>
+                                    <action selector="nextBtn:" destination="k6w-UZ-7Z5" eventType="touchUpInside" id="HHJ-yf-4Zm"/>
+                                    <action selector="paid:" destination="wSe-oM-4Hh" eventType="touchUpInside" id="eO8-Gn-0wa"/>
+                                </connections>
+                            </button>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XDl-To-34p">
+                                <rect key="frame" x="0.0" y="44" width="414" height="704"/>
+                                <color key="backgroundColor" name="Background"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="704" id="6vU-54-ZVd"/>
+                                    <constraint firstAttribute="width" constant="414" id="hGc-jc-jxU"/>
+                                </constraints>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="UWY-GU-0yF"/>
+                        <color key="backgroundColor" name="Background"/>
+                        <constraints>
+                            <constraint firstItem="HqZ-1G-Pch" firstAttribute="leading" secondItem="UWY-GU-0yF" secondAttribute="leading" constant="22" id="6I3-he-pxP"/>
+                            <constraint firstItem="HqZ-1G-Pch" firstAttribute="top" secondItem="XDl-To-34p" secondAttribute="bottom" constant="26" id="UcG-qp-P4Y"/>
+                            <constraint firstItem="XDl-To-34p" firstAttribute="trailing" secondItem="UWY-GU-0yF" secondAttribute="trailing" id="jUF-xw-WY0"/>
+                            <constraint firstItem="UWY-GU-0yF" firstAttribute="trailing" secondItem="HqZ-1G-Pch" secondAttribute="trailing" constant="21" id="k9C-wB-Nmt"/>
+                            <constraint firstItem="XDl-To-34p" firstAttribute="top" secondItem="UWY-GU-0yF" secondAttribute="top" id="khb-zJ-P40"/>
+                            <constraint firstItem="XDl-To-34p" firstAttribute="leading" secondItem="UWY-GU-0yF" secondAttribute="leading" id="ldS-uC-G97"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="XDl-To-34p" id="Go2-4K-7Pc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nBW-8n-QfP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6282.608695652174" y="651.5625"/>
         </scene>
         <!--Create New Password-->
         <scene sceneID="VlA-ie-0tb">
@@ -1804,10 +1913,10 @@
             </objects>
             <point key="canvasLocation" x="130.43478260869566" y="-28.794642857142854"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--My Navigation Controller-->
         <scene sceneID="QhR-sJ-qKb">
             <objects>
-                <navigationController storyboardIdentifier="HomeNav" automaticallyAdjustsScrollViewInsets="NO" id="o1F-Ga-ttl" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="HomeNav" automaticallyAdjustsScrollViewInsets="NO" id="o1F-Ga-ttl" customClass="myNavigationController" customModule="hotel_management_system" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="V4o-wv-bud">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
@@ -1823,20 +1932,17 @@
             <point key="canvasLocation" x="2647.826086956522" y="651.5625"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="oeg-KU-53a"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="angle_right" width="512" height="512"/>
         <image name="avt" width="960" height="944"/>
         <image name="bell" width="512" height="512"/>
         <image name="car" catalog="system" width="128" height="95"/>
+        <image name="carrot" catalog="system" width="128" height="122"/>
         <image name="carseat.left.massage" catalog="system" width="128" height="118"/>
         <image name="fork.knife" catalog="system" width="94" height="128"/>
         <image name="location" width="512" height="512"/>
         <image name="person.3.fill" catalog="system" width="128" height="66"/>
         <image name="refrigerator" catalog="system" width="97" height="128"/>
-        <image name="spoon.serving" catalog="system" width="63" height="128"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <image name="suitcase.fill" catalog="system" width="128" height="100"/>
         <image name="test_image" width="6000" height="4000"/>
