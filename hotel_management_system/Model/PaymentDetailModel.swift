@@ -8,10 +8,10 @@
 import Foundation
 import UIKit
 struct PaymentDetailModel: Codable {
-    let total: String
-    let room: RoomModel
-    let checkIn: Date
-    let checkOut: Date
-    let services: [String]
+    var total: Double?
+    var room: RoomModel?
+    var checkIn: Date?
+    var checkOut: Date?
+    var services: [String]?
 }
 

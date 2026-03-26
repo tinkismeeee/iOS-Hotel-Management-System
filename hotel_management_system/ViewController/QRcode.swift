@@ -10,9 +10,16 @@ import WebKit
 
 class QRcode: UIViewController, WKUIDelegate {
     @IBOutlet weak var webView: WKWebView!
-    var data: PaymentDetailModel
+    var data: PaymentDetailModel?
     override func viewDidLoad() {
         super.viewDidLoad()
+        // check
+        if let data = data {
+                print(data)
+        }
+        else {
+            print("general data is null")
+        }
         let myURL = URL(string:"https://img.vietqr.io/image/vietinbank-113366668888-compact2.jpg?amount=790000&addInfo=dong%20gop%20quy%20vac%20xin&accountName=Quy%20Vac%20Xin%20Covid")
         let myRequest = URLRequest(url: myURL!)
         webView.load(myRequest)

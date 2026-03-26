@@ -32,6 +32,8 @@ class Checkout: UIViewController {
     var promotionCodes: [String] = []
     let applyFailedAlert = UIAlertController(title: "Error", message: "Promotion code is invalid or empty", preferredStyle: .alert)
     let applySuccessfullyAlert = UIAlertController(title: "Successfully", message: "Use voucher successfully", preferredStyle: .alert)
+    // general data
+    var data = PaymentDetailModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         // print("\(roomData) | \(roomImage) | \(checkInTime) - \(checkOutTime) | \(optionalServicesList)")
@@ -55,6 +57,8 @@ class Checkout: UIViewController {
         bedCount.text = "Max number of beds: \(roomData?.bed_count ?? 0)"
         checkInandCheckOut.text = "\(checkInString) - \(checkOutString)"
         optionalServices.text = optionalServicesList?.joined(separator: ", ")
+        data.services = optionalServicesList
+        data.room = roomData
         var room_price = 0.0
         var vat_price = 0.0
         if let checkIn = checkInTime,
@@ -74,6 +78,10 @@ class Checkout: UIViewController {
             roomPrice.text = numFormatter.string(from: NSNumber(value: total))
             room_price = total
             vat_price = vat
+            // Get general data
+            data.checkIn = checkIn
+            data.checkOut = checkOut
+            data.total = total
         }
         promotionDiscount.text = num_formatter.string(from: NSNumber(value: 0))
         totalPrice.text = num_formatter.string(from: NSNumber(value: vat_price + room_price))
@@ -146,6 +154,8 @@ class Checkout: UIViewController {
     @IBAction func confirmPayment(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "qrcode") as! QRcode
+        print(data)
+        vc.data = data
         // print(navigationController)
         navigationController?.pushViewController(vc, animated: true)
     }
