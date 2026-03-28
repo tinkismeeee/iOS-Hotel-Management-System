@@ -16,6 +16,7 @@ class Login: UIViewController {
     var isRemember = false
     let alert = UIAlertController(title: "Error", message: "Email or password is invalid", preferredStyle: .alert)
     let loginInfo = UserDefaults.standard
+    var userId: Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         let okAction = UIAlertAction(title: "OK", style: .default) {
@@ -40,11 +41,12 @@ class Login: UIViewController {
         let password = passwordInput.text ?? ""
         
         if (email.isEmpty || password.isEmpty) {
-//            present(alert, animated: true, completion: nil)
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "HomeNav")
-            vc.modalPresentationStyle = .fullScreen
-            present(vc, animated: true)
+            present(alert, animated: true, completion: nil)
+//            self.loginInfo.set("tinhisme1@gmail.com", forKey: "email")
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let vc = storyboard.instantiateViewController(withIdentifier: "HomeNav")
+//            vc.modalPresentationStyle = .fullScreen
+//            present(vc, animated: true)
             return
         }
         else {
@@ -54,14 +56,26 @@ class Login: UIViewController {
                 case .success(let data):
                     if let data = data {
                         print(String(data: data, encoding: .utf8) ?? "")
-                        DispatchQueue.main.async {
-                            self.loginSuccess = true
-                            self.emailInput.text = ""
-                            self.passwordInput.text = ""
-                            self.loginInfo.set(email, forKey: "email")
-                            self.loginInfo.set(password, forKey: "password")
-                            // self.performSegue(withIdentifier: "enterotp", sender: email)
-                            self.loginSuccess = false
+                        do {
+                            if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+                               let user = json["user"] as? [String: Any],
+                               let userId = user["user_id"] as? Int {
+                                DispatchQueue.main.async {
+                                    self.loginSuccess = true
+                                    self.emailInput.text = ""
+                                    self.passwordInput.text = ""
+                                    self.loginInfo.set(email, forKey: "email")
+                                    self.loginInfo.set(password, forKey: "password")
+                                    self.loginInfo.set(userId, forKey: "userId")
+                                    // print("Get userId:", userId)
+                                     self.performSegue(withIdentifier: "enterotp", sender: email)
+                                    self.loginSuccess = false
+                                }
+                            } else {
+                                print("user_id not found")
+                            }
+                        } catch {
+                            print("Parse error: \(error)")
                         }
                     }
                 case .failure(let error):

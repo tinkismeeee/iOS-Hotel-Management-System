@@ -13,5 +13,6 @@ struct PaymentDetailModel: Codable {
     var checkIn: Date?
     var checkOut: Date?
     var services: [String]?
+    var room_image: String?
 }
 

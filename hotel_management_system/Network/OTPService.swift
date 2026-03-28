@@ -33,7 +33,7 @@ class OtpService {
         AF.request(url, method: .post, parameters: params, encoder: URLEncodedFormParameterEncoder.default).responseString { response in
             switch response.result {
             case .success(let result):
-                let success = result.contains("success")
+                let success = result.contains("\"success\":true")
                 callback(success, result)
             case .failure(let error):
                 callback(false, error.localizedDescription)

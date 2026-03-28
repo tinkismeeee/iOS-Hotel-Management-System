@@ -46,9 +46,18 @@ class Service {
             .validate()
             .response { response in
                 completion(response.result)
-                
             }
-        
+    }
+    func getAllBooking(completion: @escaping (Result <Data?, AFError>) -> Void) {
+        AF.request(BookingRouter.getAllBooking).validate().response {
+            response in completion(response.result)
+        }
+    }
+    
+    func createBooking(body: BookingModel, completion: @escaping (Result <Data?, AFError>) -> Void) {
+        AF.request(BookingRouter.createBooking(body: body)).validate().response { response in
+            completion(response.result)
+        }
     }
 }
 

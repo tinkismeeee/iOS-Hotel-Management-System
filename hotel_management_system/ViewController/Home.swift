@@ -20,6 +20,7 @@ class Home: UIViewController, UIImagePickerControllerDelegate, UINavigationContr
     @IBOutlet weak var addressHolder: UILabel!
     @IBOutlet weak var location: UIImageView!
     @IBOutlet weak var nameHolder: UILabel!
+    @IBOutlet weak var bookingHistory: UIImageView!
     var filteredRooms: [RoomModel] = []
     var rooms: [RoomModel] = []
     var roomImageUrls: [String] = []
@@ -31,8 +32,11 @@ class Home: UIViewController, UIImagePickerControllerDelegate, UINavigationContr
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 300
         avatarImage.isUserInteractionEnabled = true
+        bookingHistory.isUserInteractionEnabled = true
         let tap = UITapGestureRecognizer(target: self, action: #selector(changeAvatar))
         avatarImage.addGestureRecognizer(tap)
+        let bookingHistoryTap = UITapGestureRecognizer(target: self, action: #selector(Bkhistory))
+        bookingHistory.addGestureRecognizer(bookingHistoryTap)
         loadRooms()
         loadRoomImages()
         locationManager.delegate = self
@@ -109,7 +113,12 @@ class Home: UIViewController, UIImagePickerControllerDelegate, UINavigationContr
         picker.delegate = self
         present(picker, animated: true)
     }
-
+    
+    @objc func Bkhistory() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "BookingHistory") as! BookingHistory
+        navigationController?.pushViewController(vc, animated: true)
+    }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         if let image = info[.originalImage] as? UIImage {
             avatarImage.image = image
@@ -171,4 +180,5 @@ extension Home: UITableViewDataSource, UITableViewDelegate {
         // print(navigationController)
         navigationController?.pushViewController(vc, animated: true)
     }
+    
 }

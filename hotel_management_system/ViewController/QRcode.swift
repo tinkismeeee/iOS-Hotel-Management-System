@@ -25,11 +25,43 @@ class QRcode: UIViewController, WKUIDelegate {
         webView.load(myRequest)
         
     }
-
+    
+    func formatDate(_ date: Date?) -> String {
+        guard let date = date else { return "" }
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        return formatter.string(from: date)
+    }
+    
     @IBAction func paid(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "home") as! Home
-        // print(navigationController)
-        navigationController?.pushViewController(vc, animated: true)
+        let user_id = UserDefaults.standard.integer(forKey: "userId")
+        let check_in = formatDate(data?.checkIn)
+        let check_out = formatDate(data?.checkOut)
+        let total_guests = data?.room?.max_guests ?? 0
+        let room_ids = data?.room?.room_id ?? 0
+        let total_price = data?.total ?? 0
+        let body = BookingModel(user_id: user_id, check_in: check_in, check_out: check_out, total_guests: total_guests, total_price: total_price, room_id: [room_ids])
+        print(body)
+        Service.shared.createBooking(body: body) { result in
+            switch result {
+            case .success(let data):
+                if let data = data {
+                    print(String(data: data, encoding: .utf8) ?? "")
+                } else {
+                    print("Create booking success but data is nil")
+                }
+                DispatchQueue.main.async {
+            
+                }
+            case .failure(let error):
+                print("Create booking failed: \(error)")
+            }
+        }
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let vc = storyboard.instantiateViewController(withIdentifier: "home") as! Home
+//        // print(navigationController)
+//        navigationController?.pushViewController(vc, animated: true)
+        
     }
 }

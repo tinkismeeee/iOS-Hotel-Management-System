@@ -59,6 +59,7 @@ class Checkout: UIViewController {
         optionalServices.text = optionalServicesList?.joined(separator: ", ")
         data.services = optionalServicesList
         data.room = roomData
+        data.room_image = roomImage
         var room_price = 0.0
         var vat_price = 0.0
         if let checkIn = checkInTime,
@@ -67,7 +68,7 @@ class Checkout: UIViewController {
            let pricePerNight = Double(priceStr) {
             let calendar = Calendar.current
             let nights = max(1, calendar.dateComponents([.day], from: checkIn, to: checkOut).day ?? 1)
-            let total = Double(nights) * pricePerNight
+            let total: Double = Double(nights) * pricePerNight
             let numFormatter = NumberFormatter()
             numFormatter.numberStyle = .currency
             numFormatter.locale = Locale(identifier: "vi_VN")
@@ -81,7 +82,7 @@ class Checkout: UIViewController {
             // Get general data
             data.checkIn = checkIn
             data.checkOut = checkOut
-            data.total = total
+            data.total = total + vat
         }
         promotionDiscount.text = num_formatter.string(from: NSNumber(value: 0))
         totalPrice.text = num_formatter.string(from: NSNumber(value: vat_price + room_price))
@@ -141,7 +142,7 @@ class Checkout: UIViewController {
             
             let total = roomTotal + optionalServiceTotal - discount + vat
             totalPrice.text = numFormatter.string(from: NSNumber(value: total))
-            
+            data.total = total
             present(applySuccessfullyAlert, animated: true)
 //            promotionTextField.isEnabled = false
 //            applyBtn.isEnabled = false
