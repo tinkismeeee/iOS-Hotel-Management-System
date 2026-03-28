@@ -20,7 +20,7 @@ class QRcode: UIViewController, WKUIDelegate {
         else {
             print("general data is null")
         }
-        let myURL = URL(string:"https://img.vietqr.io/image/vietinbank-113366668888-compact2.jpg?amount=790000&addInfo=dong%20gop%20quy%20vac%20xin&accountName=Quy%20Vac%20Xin%20Covid")
+        let myURL = URL(string:"https://vietqr.co/api/generate/vba/4815205123757/NGUYEN%20HUU%20TINH/\(data?.total ?? 0)/THANH%20TOAN%20\(String(UUID().uuidString.prefix(7)))?isMask=0&logo=1&style=1&bg=\(Int.random(in: 1...80))")
         let myRequest = URLRequest(url: myURL!)
         webView.load(myRequest)
         
