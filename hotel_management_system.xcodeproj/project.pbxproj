@@ -6,25 +6,30 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		046516D52F6B7A5100F30466 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 046516D42F6B7A5100F30466 /* Kingfisher */; };
+		04B90A092F60D3DF00E364C9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 04B90A082F60D3DF00E364C9 /* Alamofire */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
-		04AD29BD2F274DE000210D48 /* hotel_management_system.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hotel_management_system.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		044160B32F60CD61006AC7F2 /* hotel_management_system.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hotel_management_system.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		04AD29CF2F274DE200210D48 /* Exceptions for "hotel_management_system" folder in "hotel_management_system" target */ = {
+		044160C52F60CD66006AC7F2 /* Exceptions for "hotel_management_system" folder in "hotel_management_system" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 04AD29BC2F274DE000210D48 /* hotel_management_system */;
+			target = 044160B22F60CD61006AC7F2 /* hotel_management_system */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		04AD29BF2F274DE000210D48 /* hotel_management_system */ = {
+		044160B52F60CD61006AC7F2 /* hotel_management_system */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				04AD29CF2F274DE200210D48 /* Exceptions for "hotel_management_system" folder in "hotel_management_system" target */,
+				044160C52F60CD66006AC7F2 /* Exceptions for "hotel_management_system" folder in "hotel_management_system" target */,
 			);
 			path = hotel_management_system;
 			sourceTree = "<group>";
@@ -32,28 +37,30 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		04AD29BA2F274DE000210D48 /* Frameworks */ = {
+		044160B02F60CD61006AC7F2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				046516D52F6B7A5100F30466 /* Kingfisher in Frameworks */,
+				04B90A092F60D3DF00E364C9 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		04AD29B42F274DE000210D48 = {
+		044160AA2F60CD61006AC7F2 = {
 			isa = PBXGroup;
 			children = (
-				04AD29BF2F274DE000210D48 /* hotel_management_system */,
-				04AD29BE2F274DE000210D48 /* Products */,
+				044160B52F60CD61006AC7F2 /* hotel_management_system */,
+				044160B42F60CD61006AC7F2 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		04AD29BE2F274DE000210D48 /* Products */ = {
+		044160B42F60CD61006AC7F2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				04AD29BD2F274DE000210D48 /* hotel_management_system.app */,
+				044160B32F60CD61006AC7F2 /* hotel_management_system.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,64 +68,70 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		04AD29BC2F274DE000210D48 /* hotel_management_system */ = {
+		044160B22F60CD61006AC7F2 /* hotel_management_system */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 04AD29D02F274DE200210D48 /* Build configuration list for PBXNativeTarget "hotel_management_system" */;
+			buildConfigurationList = 044160C62F60CD66006AC7F2 /* Build configuration list for PBXNativeTarget "hotel_management_system" */;
 			buildPhases = (
-				04AD29B92F274DE000210D48 /* Sources */,
-				04AD29BA2F274DE000210D48 /* Frameworks */,
-				04AD29BB2F274DE000210D48 /* Resources */,
+				044160AF2F60CD61006AC7F2 /* Sources */,
+				044160B02F60CD61006AC7F2 /* Frameworks */,
+				044160B12F60CD61006AC7F2 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				04AD29BF2F274DE000210D48 /* hotel_management_system */,
+				044160B52F60CD61006AC7F2 /* hotel_management_system */,
 			);
 			name = hotel_management_system;
 			packageProductDependencies = (
+				04B90A082F60D3DF00E364C9 /* Alamofire */,
+				046516D42F6B7A5100F30466 /* Kingfisher */,
 			);
 			productName = hotel_management_system;
-			productReference = 04AD29BD2F274DE000210D48 /* hotel_management_system.app */;
+			productReference = 044160B32F60CD61006AC7F2 /* hotel_management_system.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		04AD29B52F274DE000210D48 /* Project object */ = {
+		044160AB2F60CD61006AC7F2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 2620;
-				LastUpgradeCheck = 2620;
+				LastSwiftUpdateCheck = 2630;
+				LastUpgradeCheck = 2630;
 				TargetAttributes = {
-					04AD29BC2F274DE000210D48 = {
-						CreatedOnToolsVersion = 26.2;
+					044160B22F60CD61006AC7F2 = {
+						CreatedOnToolsVersion = 26.3;
 					};
 				};
 			};
-			buildConfigurationList = 04AD29B82F274DE000210D48 /* Build configuration list for PBXProject "hotel_management_system" */;
+			buildConfigurationList = 044160AE2F60CD61006AC7F2 /* Build configuration list for PBXProject "hotel_management_system" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 04AD29B42F274DE000210D48;
+			mainGroup = 044160AA2F60CD61006AC7F2;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				04B90A072F60D3DF00E364C9 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				046516D32F6B7A5100F30466 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 04AD29BE2F274DE000210D48 /* Products */;
+			productRefGroup = 044160B42F60CD61006AC7F2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				04AD29BC2F274DE000210D48 /* hotel_management_system */,
+				044160B22F60CD61006AC7F2 /* hotel_management_system */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		04AD29BB2F274DE000210D48 /* Resources */ = {
+		044160B12F60CD61006AC7F2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -128,7 +141,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		04AD29B92F274DE000210D48 /* Sources */ = {
+		044160AF2F60CD61006AC7F2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -138,14 +151,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		04AD29D12F274DE200210D48 /* Debug */ = {
+		044160C72F60CD66006AC7F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = VJBKYLJMTJ;
+				DEVELOPMENT_TEAM = 4RD3D84AQY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hotel_management_system/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -159,7 +172,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "tinkismee.hotel-management-system";
+				PRODUCT_BUNDLE_IDENTIFIER = "tinkisme.hotel-management-system";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -171,14 +184,14 @@
 			};
 			name = Debug;
 		};
-		04AD29D22F274DE200210D48 /* Release */ = {
+		044160C82F60CD66006AC7F2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = VJBKYLJMTJ;
+				DEVELOPMENT_TEAM = 4RD3D84AQY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = hotel_management_system/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -192,7 +205,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "tinkismee.hotel-management-system";
+				PRODUCT_BUNDLE_IDENTIFIER = "tinkisme.hotel-management-system";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -204,7 +217,7 @@
 			};
 			name = Release;
 		};
-		04AD29D32F274DE200210D48 /* Debug */ = {
+		044160C92F60CD66006AC7F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -239,7 +252,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = VJBKYLJMTJ;
+				DEVELOPMENT_TEAM = 4RD3D84AQY;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -268,7 +281,7 @@
 			};
 			name = Debug;
 		};
-		04AD29D42F274DE200210D48 /* Release */ = {
+		044160CA2F60CD66006AC7F2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -303,7 +316,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = VJBKYLJMTJ;
+				DEVELOPMENT_TEAM = 4RD3D84AQY;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -328,25 +341,57 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		04AD29B82F274DE000210D48 /* Build configuration list for PBXProject "hotel_management_system" */ = {
+		044160AE2F60CD61006AC7F2 /* Build configuration list for PBXProject "hotel_management_system" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				04AD29D32F274DE200210D48 /* Debug */,
-				04AD29D42F274DE200210D48 /* Release */,
+				044160C92F60CD66006AC7F2 /* Debug */,
+				044160CA2F60CD66006AC7F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		04AD29D02F274DE200210D48 /* Build configuration list for PBXNativeTarget "hotel_management_system" */ = {
+		044160C62F60CD66006AC7F2 /* Build configuration list for PBXNativeTarget "hotel_management_system" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				04AD29D12F274DE200210D48 /* Debug */,
-				04AD29D22F274DE200210D48 /* Release */,
+				044160C72F60CD66006AC7F2 /* Debug */,
+				044160C82F60CD66006AC7F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		046516D32F6B7A5100F30466 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.8.0;
+			};
+		};
+		04B90A072F60D3DF00E364C9 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.11.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		046516D42F6B7A5100F30466 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 046516D32F6B7A5100F30466 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		04B90A082F60D3DF00E364C9 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04B90A072F60D3DF00E364C9 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 04AD29B52F274DE000210D48 /* Project object */;
+	rootObject = 044160AB2F60CD61006AC7F2 /* Project object */;
 }
