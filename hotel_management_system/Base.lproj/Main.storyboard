@@ -728,7 +728,7 @@
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bell" translatesAutoresizingMaskIntoConstraints="NO" id="TpN-HU-2lg" customClass="Icon" customModule="hotel_management_system" customModuleProvider="target">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="TpN-HU-2lg" customClass="Icon" customModule="hotel_management_system" customModuleProvider="target">
                                 <rect key="frame" x="360.66666666666669" y="177" width="30" height="30"/>
                                 <color key="backgroundColor" name="Background"/>
                                 <color key="tintColor" name="Background"/>
@@ -1882,6 +1882,22 @@
             </objects>
             <point key="canvasLocation" x="6282.608695652174" y="651.5625"/>
         </scene>
+        <!--Profile-->
+        <scene sceneID="fCn-Yg-CqW">
+            <objects>
+                <viewController storyboardIdentifier="profile" id="Bs6-sf-eia" customClass="Profile" customModule="hotel_management_system" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DE0-Yi-9UT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Xgj-jI-Lol"/>
+                        <color key="backgroundColor" name="Background"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3I7-NQ-Qp5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xdp-jH-0m7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6302.898550724638" y="1364.7321428571429"/>
+        </scene>
         <!--Create New Password-->
         <scene sceneID="VlA-ie-0tb">
             <objects>
@@ -2029,10 +2045,27 @@
             </objects>
             <point key="canvasLocation" x="2647.826086956522" y="651.5625"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yjw-bB-O5C">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uvh-Jg-M97" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XAS-CZ-2gx">
+                        <rect key="frame" x="0.0" y="88" width="414" height="54"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Bs6-sf-eia" kind="relationship" relationship="rootViewController" id="wn0-5w-cln"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nfx-m0-NpG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5392.753623188406" y="1364.7321428571429"/>
+        </scene>
     </scenes>
     <resources>
         <image name="avt" width="960" height="944"/>
-        <image name="bell" width="512" height="512"/>
         <image name="car" catalog="system" width="128" height="95"/>
         <image name="carrot" catalog="system" width="128" height="122"/>
         <image name="carseat.left.massage" catalog="system" width="128" height="118"/>
@@ -2043,6 +2076,7 @@
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <image name="suitcase.fill" catalog="system" width="128" height="100"/>
         <image name="test_image" width="6000" height="4000"/>
+        <image name="user" width="512" height="512"/>
         <image name="washer" catalog="system" width="121" height="128"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

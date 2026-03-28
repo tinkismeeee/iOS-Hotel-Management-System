@@ -15,7 +15,6 @@ class Home: UIViewController, UIImagePickerControllerDelegate, UINavigationContr
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var avatarImage: CircleAvatar!
     @IBOutlet weak var notification: Icon!
-    @IBOutlet weak var location1: UIImageView!
     @IBOutlet weak var addressHolder: UILabel!
     @IBOutlet weak var nameHolder: UILabel!
     @IBOutlet weak var bookingHistory: UIImageView!
@@ -47,7 +46,6 @@ class Home: UIViewController, UIImagePickerControllerDelegate, UINavigationContr
         let lastName = UserDefaults.standard.string(forKey: "last_name") ?? ""
         nameHolder.text = firstName + " " + lastName
         addressHolder.text = UserDefaults.standard.string(forKey: "address")
-        notification.isHidden = true
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
