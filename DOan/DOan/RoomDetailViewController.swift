@@ -28,22 +28,22 @@ class RoomDetailViewController: UIViewController {
                 roomNameLabel.text = "Phòng \(room.roomNumber)"
                 
                 // Gán tên loại phòng vào Label mới tạo (VD: "Loại phòng: Family")
-                roomTypeLabel.text = "Loại phòng: \(room.roomTypeName)"
+                roomTypeLabel.text = "\(room.roomTypeName)"
                 
-                descriptionLabel.text = "Mô tả: \(room.description)"
-                floorLabel.text = "Tầng: \(room.floor)"
-                statusLabel.text = "Trạng thái: \(room.status.uppercased())"
-                guestLabel.text = "Số khách tối đa: \(room.maxGuests) người"
-                bedLabel.text = "Số giường: \(room.bedCount) giường"
+                descriptionLabel.text = " \(room.description)"
+                floorLabel.text = "\(room.floor)"
+                statusLabel.text = " \(room.status.uppercased())"
+                guestLabel.text = "\(room.maxGuests) người"
+                bedLabel.text = "\(room.bedCount) giường"
                 
                 // Xử lý làm đẹp giá tiền
                 if let priceDouble = Double(room.pricePerNight) {
                     let formatter = NumberFormatter()
                     formatter.numberStyle = .decimal
                     let formattedPrice = formatter.string(from: NSNumber(value: priceDouble)) ?? room.pricePerNight
-                    priceLabel.text = "Giá: \(formattedPrice) VNĐ/đêm"
+                    priceLabel.text = " \(formattedPrice) VNĐ/đêm"
                 } else {
-                    priceLabel.text = "Giá: \(room.pricePerNight) VNĐ/đêm"
+                    priceLabel.text = " \(room.pricePerNight) VNĐ/đêm"
                 }
             }
         }		

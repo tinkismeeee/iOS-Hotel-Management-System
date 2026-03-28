@@ -15,11 +15,12 @@ class RoomManagementViewController: UIViewController {
     
     var roomList: [Room] = []
     override func viewDidLoad() {
-            super.viewDidLoad()
-            
-            roomTableView.dataSource = self
-            roomTableView.delegate = self
-            fetchRooms()
+        super.viewDidLoad()
+        
+        roomTableView.dataSource = self
+        roomTableView.delegate = self
+        roomTableView.rowHeight = 100
+        fetchRooms()
         
     }
     func fetchRooms() {
@@ -80,19 +81,35 @@ extension RoomManagementViewController: UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RoomCell", for: indexPath)
-        
-        let roomData = roomList[indexPath.row]
-        
-        var content = cell.defaultContentConfiguration()
-        
-        // Dòng chữ chính: Ví dụ "Phòng 101 - Family"
-        content.text = "Phòng \(roomData.roomNumber) - \(roomData.roomTypeName)"
-        
-        // Dòng chữ phụ: Trạng thái và Giá tiền
-        content.secondaryText = "Trạng thái: \(roomData.status.uppercased()) | Giá: \(roomData.pricePerNight) VNĐ"
-        
-        cell.contentConfiguration = content
-        return cell
-    }
+            // 1. Gọi cái custom cell ra và "ép kiểu" nó thành RoomTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "RoomCell", for: indexPath) as! RoomTableViewCell
+            
+            let roomData = roomList[indexPath.row]
+            
+            // 2. Gán chữ vào các Label
+            cell.roomNameLabel.text = "Phòng \(roomData.roomNumber) - \(roomData.roomTypeName)"
+            cell.detailLabel.text = "Tầng: \(roomData.floor) | Giường: \(roomData.bedCount) | Khách: \(roomData.maxGuests)"
+            
+            // Định dạng giá tiền
+            if let priceDouble = Double(roomData.pricePerNight) {
+                let formatter = NumberFormatter()
+                formatter.numberStyle = .decimal
+                cell.priceLabel.text = "\(formatter.string(from: NSNumber(value: priceDouble)) ?? roomData.pricePerNight) VNĐ"
+            }
+            
+            // 3. Xử lý cái "Nhãn trạng thái" thần thánh
+            cell.statusBadgeLabel.text = " \(roomData.status.uppercased()) " // Thêm dấu cách 2 bên cho nó mập mạp
+            
+            // Tô màu nền tùy theo trạng thái (Booked = Đỏ, Available = Xanh, Còn lại = Xám)
+            switch roomData.status.lowercased() {
+            case "booked":
+                cell.statusBadgeLabel.backgroundColor = .systemRed
+            case "available":
+                cell.statusBadgeLabel.backgroundColor = .systemGreen
+            default:
+                cell.statusBadgeLabel.backgroundColor = .systemGray
+            }
+            
+            return cell
+        }
 }

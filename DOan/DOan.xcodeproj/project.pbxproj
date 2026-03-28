@@ -12,7 +12,12 @@
 		3010DCCB2F66BF16002EE101 /* ServiceManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3010DCCA2F66BF16002EE101 /* ServiceManagementViewController.swift */; };
 		3010DCCD2F66C304002EE101 /* ServiceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3010DCCC2F66C304002EE101 /* ServiceDetailViewController.swift */; };
 		3010DCCF2F66C673002EE101 /* Invoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3010DCCE2F66C673002EE101 /* Invoice.swift */; };
+		3039D3362F786032005CAB99 /* ServiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039D3352F786032005CAB99 /* ServiceTableViewCell.swift */; };
+		3039D3382F786797005CAB99 /* InvoiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039D3372F786797005CAB99 /* InvoiceTableViewCell.swift */; };
+		3080AFE72F77CF9F00F97C5C /* Promotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3080AFE62F77CF9F00F97C5C /* Promotion.swift */; };
+		3080AFE92F77D16C00F97C5C /* PromotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3080AFE82F77D16C00F97C5C /* PromotionViewController.swift */; };
 		308C2B102F656E9700E3EE04 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308C2B0F2F656E9700E3EE04 /* Room.swift */; };
+		30A9999B2F7845C4001E5C45 /* RoomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A9999A2F7845C4001E5C45 /* RoomTableViewCell.swift */; };
 		30B1011B2F654F46009B5DA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B1011A2F654F46009B5DA5 /* AppDelegate.swift */; };
 		30B1011D2F654F46009B5DA5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B1011C2F654F46009B5DA5 /* SceneDelegate.swift */; };
 		30B1011F2F654F46009B5DA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B1011E2F654F46009B5DA5 /* ViewController.swift */; };
@@ -50,7 +55,12 @@
 		3010DCCA2F66BF16002EE101 /* ServiceManagementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManagementViewController.swift; sourceTree = "<group>"; };
 		3010DCCC2F66C304002EE101 /* ServiceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailViewController.swift; sourceTree = "<group>"; };
 		3010DCCE2F66C673002EE101 /* Invoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Invoice.swift; sourceTree = "<group>"; };
+		3039D3352F786032005CAB99 /* ServiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTableViewCell.swift; sourceTree = "<group>"; };
+		3039D3372F786797005CAB99 /* InvoiceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceTableViewCell.swift; sourceTree = "<group>"; };
+		3080AFE62F77CF9F00F97C5C /* Promotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Promotion.swift; sourceTree = "<group>"; };
+		3080AFE82F77D16C00F97C5C /* PromotionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionViewController.swift; sourceTree = "<group>"; };
 		308C2B0F2F656E9700E3EE04 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		30A9999A2F7845C4001E5C45 /* RoomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTableViewCell.swift; sourceTree = "<group>"; };
 		30B101172F654F46009B5DA5 /* DOan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DOan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30B1011A2F654F46009B5DA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30B1011C2F654F46009B5DA5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,8 +107,6 @@
 		30B1010E2F654F46009B5DA5 = {
 			isa = PBXGroup;
 			children = (
-				30C1F7FD2F66CC5100D92F10 /* RevenueViewController.swift */,
-				308C2B0F2F656E9700E3EE04 /* Room.swift */,
 				30B101192F654F46009B5DA5 /* DOan */,
 				30B101302F654F47009B5DA5 /* DOanTests */,
 				30B1013A2F654F47009B5DA5 /* DOanUITests */,
@@ -119,10 +127,13 @@
 		30B101192F654F46009B5DA5 /* DOan */ = {
 			isa = PBXGroup;
 			children = (
+				30C1F7FD2F66CC5100D92F10 /* RevenueViewController.swift */,
+				308C2B0F2F656E9700E3EE04 /* Room.swift */,
 				30B1011A2F654F46009B5DA5 /* AppDelegate.swift */,
 				30B1011C2F654F46009B5DA5 /* SceneDelegate.swift */,
 				30B1011E2F654F46009B5DA5 /* ViewController.swift */,
 				30B101202F654F46009B5DA5 /* Main.storyboard */,
+				3080AFE62F77CF9F00F97C5C /* Promotion.swift */,
 				30C1F7FF2F66D2BB00D92F10 /* InvoiceDetailViewController.swift */,
 				3010DCCE2F66C673002EE101 /* Invoice.swift */,
 				3010DCCC2F66C304002EE101 /* ServiceDetailViewController.swift */,
@@ -133,6 +144,10 @@
 				30B101252F654F47009B5DA5 /* LaunchScreen.storyboard */,
 				30B101282F654F47009B5DA5 /* Info.plist */,
 				30B101802F6560D9009B5DA5 /* RoomManagementViewController.swift */,
+				3080AFE82F77D16C00F97C5C /* PromotionViewController.swift */,
+				30A9999A2F7845C4001E5C45 /* RoomTableViewCell.swift */,
+				3039D3352F786032005CAB99 /* ServiceTableViewCell.swift */,
+				3039D3372F786797005CAB99 /* InvoiceTableViewCell.swift */,
 			);
 			path = DOan;
 			sourceTree = "<group>";
@@ -291,11 +306,16 @@
 				30B1011F2F654F46009B5DA5 /* ViewController.swift in Sources */,
 				30B1011B2F654F46009B5DA5 /* AppDelegate.swift in Sources */,
 				30B101812F6560D9009B5DA5 /* RoomManagementViewController.swift in Sources */,
+				30A9999B2F7845C4001E5C45 /* RoomTableViewCell.swift in Sources */,
+				3080AFE92F77D16C00F97C5C /* PromotionViewController.swift in Sources */,
 				3010DCCD2F66C304002EE101 /* ServiceDetailViewController.swift in Sources */,
+				3039D3362F786032005CAB99 /* ServiceTableViewCell.swift in Sources */,
 				30C1F7FE2F66CC5100D92F10 /* RevenueViewController.swift in Sources */,
 				3010DCCB2F66BF16002EE101 /* ServiceManagementViewController.swift in Sources */,
 				3010DCCF2F66C673002EE101 /* Invoice.swift in Sources */,
 				30B1011D2F654F46009B5DA5 /* SceneDelegate.swift in Sources */,
+				3080AFE72F77CF9F00F97C5C /* Promotion.swift in Sources */,
+				3039D3382F786797005CAB99 /* InvoiceTableViewCell.swift in Sources */,
 				308C2B102F656E9700E3EE04 /* Room.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

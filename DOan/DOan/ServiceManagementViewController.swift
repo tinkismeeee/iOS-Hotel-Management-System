@@ -13,14 +13,14 @@ class ServiceManagementViewController: UIViewController {
     @IBOutlet weak var serviceTableView: UITableView!
     var serviceList: [Service] = []
     override func viewDidLoad() {
-            super.viewDidLoad()
+        super.viewDidLoad()
             
-            // Đăng ký cung cấp dữ liệu cho bảng
-            serviceTableView.dataSource = self
-            serviceTableView.delegate = self
-            
-            // Gọi API
-            fetchServices()
+        // Đăng ký cung cấp dữ liệu cho bảng
+        serviceTableView.dataSource = self
+        serviceTableView.delegate = self
+        serviceTableView.rowHeight = 100
+        // Gọi API
+        fetchServices()
     }
     
     func fetchServices() {
@@ -73,29 +73,41 @@ extension ServiceManagementViewController: UITableViewDataSource, UITableViewDel
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ServiceCell", for: indexPath)
-        let serviceData = serviceList[indexPath.row]
-        
-        var content = cell.defaultContentConfiguration()
-        
-        // Dòng chữ chính: Tên dịch vụ + Mã dịch vụ
-        content.text = "\(serviceData.name) (\(serviceData.serviceCode))"
-        
-        // Xử lý định dạng giá tiền (từ "50000.00" -> "50,000")
-        let priceString: String
-        if let priceDouble = Double(serviceData.price) {
-            let formatter = NumberFormatter()
-            formatter.numberStyle = .decimal
-            priceString = formatter.string(from: NSNumber(value: priceDouble)) ?? serviceData.price
-        } else {
-            priceString = serviceData.price
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ServiceCell", for: indexPath) as! ServiceTableViewCell
+            
+            let service = serviceList[indexPath.row]
+            
+            // 1. Gán Tên và Mã
+            cell.nameLabel.text = "\(service.name) (\(service.serviceCode))"
+            
+            // 2. Định dạng Giá tiền
+            if let priceDouble = Double(service.price) {
+                let formatter = NumberFormatter()
+                formatter.numberStyle = .decimal
+                cell.priceLabel.text = "\(formatter.string(from: NSNumber(value: priceDouble)) ?? service.price) VNĐ"
+            }
+            
+            // 3. Xử lý nhãn trạng thái (Mở = Xanh, Đóng = Đỏ)
+            if service.availability {
+                cell.statusBadgeLabel.text = " Đang mở "
+                cell.statusBadgeLabel.backgroundColor = .systemGreen
+            } else {
+                cell.statusBadgeLabel.text = " Tạm ngưng "
+                cell.statusBadgeLabel.backgroundColor = .systemRed
+            }
+            
+            // 4. (Tùy chọn) Đổi icon động cho ngầu
+            let nameLower = service.name.lowercased()
+            if nameLower.contains("laundry") {
+                cell.iconImageView.image = UIImage(systemName: "washer.fill") // Icon máy giặt
+            } else if nameLower.contains("breakfast") || nameLower.contains("dinner") {
+                cell.iconImageView.image = UIImage(systemName: "fork.knife") // Icon dao nĩa
+            } else if nameLower.contains("spa") {
+                cell.iconImageView.image = UIImage(systemName: "leaf.fill") // Icon chiếc lá
+            } else {
+                cell.iconImageView.image = UIImage(systemName: "tray.full.fill") // Icon mặc định
+            }
+            
+            return cell
         }
-        
-        // Dòng chữ phụ: Trạng thái (hiện chữ Đang mở/Tạm ngưng) và Giá
-        let statusText = serviceData.availability ? "Đang mở" : "Tạm ngưng"
-        content.secondaryText = "\(statusText) | Giá: \(priceString) VNĐ\n\(serviceData.description)"
-        
-        cell.contentConfiguration = content
-        return cell
-    }
 }
