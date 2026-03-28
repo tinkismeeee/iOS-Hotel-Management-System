@@ -7,6 +7,7 @@
 
 import UIKit
 import WebKit
+import UserNotifications
 
 class QRcode: UIViewController, WKUIDelegate {
     @IBOutlet weak var webView: WKWebView!
@@ -20,12 +21,29 @@ class QRcode: UIViewController, WKUIDelegate {
         else {
             print("general data is null")
         }
-        let myURL = URL(string:"https://vietqr.co/api/generate/vba/4815205123757/NGUYEN%20HUU%20TINH/\(data?.total ?? 0)/THANH%20TOAN%20\(String(UUID().uuidString.prefix(7)))?isMask=0&logo=1&style=1&bg=\(Int.random(in: 1...80))")
+        let myURL = URL(string:"https://vietqr.co/api/generate/vba/4815205123757/NGUYEN%20HUU%20TINH/\(Int(data?.total ?? 0))/THANH%20TOAN%20\(String(UUID().uuidString.prefix(7)))?isMask=0&logo=1&style=1&bg=\(Int.random(in: 1...80))")
         let myRequest = URLRequest(url: myURL!)
         webView.load(myRequest)
-        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+            print("Permission granted:", granted)
+        }
     }
-    
+    func showNotification(title: String, body: String) {
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.body = body
+        content.sound = .default
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+        
+        let request = UNNotificationRequest(
+            identifier: UUID().uuidString,
+            content: content,
+            trigger: trigger
+        )
+        
+        UNUserNotificationCenter.current().add(request)
+    }
     func formatDate(_ date: Date?) -> String {
         guard let date = date else { return "" }
         
@@ -52,16 +70,18 @@ class QRcode: UIViewController, WKUIDelegate {
                     print("Create booking success but data is nil")
                 }
                 DispatchQueue.main.async {
-            
+                    self.showNotification(
+                        title: "Booking Confirmed",
+                        body: "Your room has been successfully booked 🎉"
+                    )
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let vc = storyboard.instantiateViewController(withIdentifier: "home") as! Home
+                    // print(navigationController)
+                    self.navigationController?.pushViewController(vc, animated: true)
                 }
             case .failure(let error):
                 print("Create booking failed: \(error)")
             }
         }
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let vc = storyboard.instantiateViewController(withIdentifier: "home") as! Home
-//        // print(navigationController)
-//        navigationController?.pushViewController(vc, animated: true)
-        
     }
 }

@@ -7,6 +7,9 @@
 
 import UIKit
 import Alamofire
+import Kingfisher
+
+
 
 class BookingHistory: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
@@ -14,14 +17,39 @@ class BookingHistory: UIViewController, UITableViewDataSource, UITableViewDelega
     var userBookingHistory: [BookingHistoryModel] = []
     let customerEmail = UserDefaults.standard.string(forKey: "email") ?? ""
     var user_id: Int?
-
+    var roomImageUrls: [String] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
         fetchCustomerByEmail(customerEmail)
+        fetchRoomImages()
     }
-    
+    func fetchRoomImages() {
+        RoomImageService.shared.getRoomImage { data in
+            guard let data = data else {
+                print("Get room images failed")
+                return
+            }
+            do {
+                if let json = try JSONSerialization.jsonObject(with: data) as? [String: Any] {
+                    if let results = json["results"] as? [[String: Any]] {
+                        for item in results {
+                            if let urls = item["urls"] as? [String: Any], let regular = urls["regular"] as? String {
+                                self.roomImageUrls.append(regular)
+                            }
+                        }
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                    }
+                }
+            } catch {
+                print("JSON parse error:", error)
+            }
+        }
+
+    }
     func fetchCustomerByEmail(_ email: String) {
         Service.shared.getCustomerByEmail(email: email) { [weak self] result in
             switch result {
@@ -79,6 +107,7 @@ class BookingHistory: UIViewController, UITableViewDataSource, UITableViewDelega
             }
         }
     }
+    
     func formatCurrency(_ value: Double?) -> String {
         guard let value = value else { return "0 ₫" }
         let formatter = NumberFormatter()
@@ -119,7 +148,10 @@ class BookingHistory: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.checkinAndCheckoutTime.text =
             "\(formatDate(booking.check_in)) - \(formatDate(booking.check_out))"
         cell.bookingId.text = "Booking ID: \(booking.booking_id ?? 0)"
-        cell.roomImage.image = UIImage(named: "avt")
+        if let randomURLString = roomImageUrls.randomElement(),
+           let url = URL(string: randomURLString) {
+            cell.roomImage.kf.setImage(with: url)
+        }
         return cell
     }
 }

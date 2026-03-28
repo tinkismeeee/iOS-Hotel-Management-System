@@ -45,6 +45,9 @@ class Home: UIViewController, UIImagePickerControllerDelegate, UINavigationContr
         location.isUserInteractionEnabled = true
         let tap1 = UITapGestureRecognizer(target: self, action: #selector(getLocation))
         location.addGestureRecognizer(tap1)
+        nameHolder.text = UserDefaults.standard.string(forKey: "name")
+        addressHolder.text = UserDefaults.standard.string(forKey: "address")
+        notification.isHidden = true
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

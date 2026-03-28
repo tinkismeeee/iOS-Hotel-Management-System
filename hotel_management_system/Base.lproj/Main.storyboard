@@ -742,6 +742,8 @@
                             </label>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bell" translatesAutoresizingMaskIntoConstraints="NO" id="TpN-HU-2lg" customClass="Icon" customModule="hotel_management_system" customModuleProvider="target">
                                 <rect key="frame" x="360.66666666666669" y="177" width="30" height="30"/>
+                                <color key="backgroundColor" name="Background"/>
+                                <color key="tintColor" name="Background"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="HaJ-wu-T21"/>
@@ -1035,7 +1037,8 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="NSY-bM-Tl1">
                                 <rect key="frame" x="0.0" y="104" width="414" height="792"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="Background"/>
+                                <color key="sectionIndexBackgroundColor" name="Background"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BookingHistoryCell" rowHeight="159" id="grV-8L-yk6" customClass="BookingHistoryCell" customModule="hotel_management_system" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="414" height="159"/>
@@ -1047,7 +1050,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cDP-x3-q2Z">
                                                     <rect key="frame" x="12" y="12" width="390" height="135"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avt" translatesAutoresizingMaskIntoConstraints="NO" id="FZI-De-Gji">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avt" translatesAutoresizingMaskIntoConstraints="NO" id="FZI-De-Gji">
                                                             <rect key="frame" x="27" y="21" width="122" height="93"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="122" id="pCk-hf-LnD"/>
@@ -2081,9 +2084,6 @@
         <namedColor name="White">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
