@@ -67,7 +67,8 @@ class Login: UIViewController {
                                     self.loginInfo.set(email, forKey: "email")
                                     self.loginInfo.set(password, forKey: "password")
                                     self.loginInfo.set(userId, forKey: "userId")
-                                    self.loginInfo.set(user["first_name"] as? String, forKey: "name")
+                                    self.loginInfo.set(user["first_name"] as? String, forKey: "first_name")
+                                    self.loginInfo.set(user["last_name"] as? String, forKey: "last_name")
                                     self.loginInfo.set(user["address"] as? String, forKey: "address")
                                     self.performSegue(withIdentifier: "enterotp", sender: email)
                                     self.loginSuccess = false

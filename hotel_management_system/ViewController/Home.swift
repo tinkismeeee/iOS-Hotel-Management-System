@@ -15,12 +15,11 @@ class Home: UIViewController, UIImagePickerControllerDelegate, UINavigationContr
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var avatarImage: CircleAvatar!
     @IBOutlet weak var notification: Icon!
-    @IBOutlet weak var location2: UIImageView!
     @IBOutlet weak var location1: UIImageView!
     @IBOutlet weak var addressHolder: UILabel!
-    @IBOutlet weak var location: UIImageView!
     @IBOutlet weak var nameHolder: UILabel!
     @IBOutlet weak var bookingHistory: UIImageView!
+    @IBOutlet weak var test: UILabel!
     var filteredRooms: [RoomModel] = []
     var rooms: [RoomModel] = []
     var roomImageUrls: [String] = []
@@ -42,10 +41,11 @@ class Home: UIViewController, UIImagePickerControllerDelegate, UINavigationContr
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-        location.isUserInteractionEnabled = true
-        let tap1 = UITapGestureRecognizer(target: self, action: #selector(getLocation))
-        location.addGestureRecognizer(tap1)
-        nameHolder.text = UserDefaults.standard.string(forKey: "name")
+        
+       
+        let firstName = UserDefaults.standard.string(forKey: "first_name") ?? ""
+        let lastName = UserDefaults.standard.string(forKey: "last_name") ?? ""
+        nameHolder.text = firstName + " " + lastName
         addressHolder.text = UserDefaults.standard.string(forKey: "address")
         notification.isHidden = true
     }

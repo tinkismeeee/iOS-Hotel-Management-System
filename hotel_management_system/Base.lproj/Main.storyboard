@@ -720,24 +720,12 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="8id-ml-8rg">
-                                <rect key="frame" x="20" y="258" width="30" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="JwH-rE-ldn"/>
-                                    <constraint firstAttribute="height" constant="30" id="xh2-d5-UuY"/>
-                                </constraints>
-                            </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="angle_right" translatesAutoresizingMaskIntoConstraints="NO" id="QKN-MX-yXy">
-                                <rect key="frame" x="364" y="256" width="30" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="3qh-02-9df"/>
-                                    <constraint firstAttribute="height" constant="30" id="oWF-lZ-ll7"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click the &gt; button to show location" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OXQ-rr-kEk">
-                                <rect key="frame" x="75" y="261" width="264" height="20"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" name="Default Text Color"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UMT SUPER VIP PRO MAX ULTRA HOTEL" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OXQ-rr-kEk">
+                                <rect key="frame" x="15" y="261" width="384" height="25.333333333333314"/>
+                                <color key="backgroundColor" name="Background"/>
+                                <color key="tintColor" name="Background"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bell" translatesAutoresizingMaskIntoConstraints="NO" id="TpN-HU-2lg" customClass="Icon" customModule="hotel_management_system" customModuleProvider="target">
@@ -988,21 +976,15 @@
                             <constraint firstItem="Bgn-In-vz4" firstAttribute="leading" secondItem="EVb-jB-E19" secondAttribute="trailing" constant="58.329999999999998" id="Ept-gC-GjR"/>
                             <constraint firstItem="DpG-EK-nRK" firstAttribute="centerX" secondItem="OXQ-rr-kEk" secondAttribute="centerX" id="HkA-iH-ULg"/>
                             <constraint firstItem="EVb-jB-E19" firstAttribute="leading" secondItem="ZE8-eT-u90" secondAttribute="leading" constant="20" id="MXr-JC-X4U"/>
+                            <constraint firstItem="pBY-Ql-WVp" firstAttribute="top" secondItem="OXQ-rr-kEk" secondAttribute="bottom" constant="29.670000000000002" id="NWF-4i-riu"/>
                             <constraint firstItem="DpG-EK-nRK" firstAttribute="top" secondItem="S90-Gy-HFH" secondAttribute="bottom" constant="8.3300000000000001" id="P9b-BV-d58"/>
                             <constraint firstItem="S90-Gy-HFH" firstAttribute="top" secondItem="pBY-Ql-WVp" secondAttribute="bottom" constant="8" id="Q1f-ef-1EP"/>
-                            <constraint firstItem="QKN-MX-yXy" firstAttribute="centerY" secondItem="OXQ-rr-kEk" secondAttribute="centerY" id="QVr-f7-D8o"/>
                             <constraint firstAttribute="trailing" secondItem="Bgn-In-vz4" secondAttribute="trailing" constant="95" id="Sra-YV-eze"/>
                             <constraint firstItem="ZE8-eT-u90" firstAttribute="trailing" secondItem="S90-Gy-HFH" secondAttribute="trailing" constant="20" id="Tzi-QB-Ohq"/>
-                            <constraint firstItem="pBY-Ql-WVp" firstAttribute="top" secondItem="8id-ml-8rg" secondAttribute="bottom" constant="28" id="an6-AP-gP4"/>
-                            <constraint firstItem="8id-ml-8rg" firstAttribute="top" secondItem="EVb-jB-E19" secondAttribute="bottom" constant="36" id="c6W-76-dER"/>
-                            <constraint firstItem="QKN-MX-yXy" firstAttribute="leading" secondItem="OXQ-rr-kEk" secondAttribute="trailing" constant="25" id="cdF-qM-HJC"/>
                             <constraint firstItem="OXQ-rr-kEk" firstAttribute="top" secondItem="EVb-jB-E19" secondAttribute="bottom" constant="39" id="fgc-qN-YDM"/>
-                            <constraint firstItem="8id-ml-8rg" firstAttribute="leading" secondItem="ZE8-eT-u90" secondAttribute="leading" constant="20" id="iil-e1-eot"/>
                             <constraint firstItem="EVb-jB-E19" firstAttribute="top" secondItem="ZE8-eT-u90" secondAttribute="top" constant="20" id="io1-wQ-47Q"/>
                             <constraint firstItem="TpN-HU-2lg" firstAttribute="top" secondItem="ZE8-eT-u90" secondAttribute="top" constant="35" id="ppd-fC-5fO"/>
-                            <constraint firstItem="QKN-MX-yXy" firstAttribute="trailing" secondItem="XzE-S2-Qe6" secondAttribute="trailingMargin" id="qkk-cU-eSZ"/>
                             <constraint firstItem="TpN-HU-2lg" firstAttribute="leading" secondItem="Bgn-In-vz4" secondAttribute="trailing" constant="41.670000000000002" id="tLo-js-jqq"/>
-                            <constraint firstItem="QKN-MX-yXy" firstAttribute="top" secondItem="TpN-HU-2lg" secondAttribute="bottom" constant="49" id="v3Z-yI-AG0"/>
                             <constraint firstItem="pBY-Ql-WVp" firstAttribute="leading" secondItem="ZE8-eT-u90" secondAttribute="leading" constant="20" id="v4G-yN-xSB"/>
                             <constraint firstAttribute="bottom" secondItem="DpG-EK-nRK" secondAttribute="bottom" id="xTZ-D4-P9n"/>
                         </constraints>
@@ -1015,12 +997,10 @@
                         <outlet property="addressHolder" destination="xwx-ft-TLF" id="0ZJ-oj-4wE"/>
                         <outlet property="avatarImage" destination="ZGm-4i-WRo" id="O8x-1e-p9Q"/>
                         <outlet property="bookingHistory" destination="Bgn-In-vz4" id="x1y-eo-FKR"/>
-                        <outlet property="location" destination="QKN-MX-yXy" id="5Bf-A2-b7L"/>
-                        <outlet property="location1" destination="8id-ml-8rg" id="xLW-0c-xYW"/>
-                        <outlet property="location2" destination="QKN-MX-yXy" id="Iiu-Ob-kFs"/>
                         <outlet property="nameHolder" destination="Dip-il-zfg" id="PFA-xr-4bZ"/>
                         <outlet property="notification" destination="TpN-HU-2lg" id="0qL-QO-22f"/>
                         <outlet property="tableView" destination="DpG-EK-nRK" id="AE6-J3-hQZ"/>
+                        <outlet property="test" destination="OXQ-rr-kEk" id="guI-ny-rHg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0XO-4c-cZW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2051,7 +2031,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="angle_right" width="512" height="512"/>
         <image name="avt" width="960" height="944"/>
         <image name="bell" width="512" height="512"/>
         <image name="car" catalog="system" width="128" height="95"/>
@@ -2059,7 +2038,6 @@
         <image name="carseat.left.massage" catalog="system" width="128" height="118"/>
         <image name="fork.knife" catalog="system" width="94" height="128"/>
         <image name="history" width="512" height="512"/>
-        <image name="location" width="512" height="512"/>
         <image name="person.3.fill" catalog="system" width="128" height="66"/>
         <image name="refrigerator" catalog="system" width="97" height="128"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
