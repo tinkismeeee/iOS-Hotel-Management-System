@@ -70,6 +70,10 @@ class Login: UIViewController {
                                     self.loginInfo.set(user["first_name"] as? String, forKey: "first_name")
                                     self.loginInfo.set(user["last_name"] as? String, forKey: "last_name")
                                     self.loginInfo.set(user["address"] as? String, forKey: "address")
+                                    self.loginInfo.set(user["phone_number"] as? String, forKey: "phone")
+                                    self.loginInfo.set(user["address"] as? String, forKey: "adress")
+                                    self.loginInfo.set(user["date_of_birth"] as? String, forKey: "date_of_birth")
+                                    self.loginInfo.set(user["username"] as? String, forKey: "username")
                                     self.performSegue(withIdentifier: "enterotp", sender: email)
                                     self.loginSuccess = false
                                 }

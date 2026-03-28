@@ -33,6 +33,8 @@ class Home: UIViewController, UIImagePickerControllerDelegate, UINavigationContr
         bookingHistory.isUserInteractionEnabled = true
         let tap = UITapGestureRecognizer(target: self, action: #selector(changeAvatar))
         avatarImage.addGestureRecognizer(tap)
+        let profileTap = UITapGestureRecognizer(target: self, action: #selector(goToProfile))
+        notification.addGestureRecognizer(profileTap)
         let bookingHistoryTap = UITapGestureRecognizer(target: self, action: #selector(Bkhistory))
         bookingHistory.addGestureRecognizer(bookingHistoryTap)
         loadRooms()
@@ -40,8 +42,6 @@ class Home: UIViewController, UIImagePickerControllerDelegate, UINavigationContr
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-        
-       
         let firstName = UserDefaults.standard.string(forKey: "first_name") ?? ""
         let lastName = UserDefaults.standard.string(forKey: "last_name") ?? ""
         nameHolder.text = firstName + " " + lastName
@@ -114,7 +114,11 @@ class Home: UIViewController, UIImagePickerControllerDelegate, UINavigationContr
         picker.delegate = self
         present(picker, animated: true)
     }
-    
+    @objc func goToProfile() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ProfileOverview") as! ProfileOverviewViewController
+        navigationController?.pushViewController(vc, animated: true)
+    }
     @objc func Bkhistory() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "BookingHistory") as! BookingHistory

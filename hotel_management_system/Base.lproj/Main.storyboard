@@ -694,7 +694,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="EVb-jB-E19">
                                 <rect key="frame" x="20" y="162" width="210.66666666666666" height="60"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avt" translatesAutoresizingMaskIntoConstraints="NO" id="ZGm-4i-WRo" customClass="CircleAvatar" customModule="hotel_management_system" customModuleProvider="target">
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mockImage" translatesAutoresizingMaskIntoConstraints="NO" id="ZGm-4i-WRo" customClass="CircleAvatar" customModule="hotel_management_system" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="HM1-qO-TzV"/>
@@ -1883,20 +1883,432 @@
             <point key="canvasLocation" x="6282.608695652174" y="651.5625"/>
         </scene>
         <!--Profile-->
-        <scene sceneID="fCn-Yg-CqW">
+        <scene sceneID="profile-overview-scene">
             <objects>
-                <viewController storyboardIdentifier="profile" id="Bs6-sf-eia" customClass="Profile" customModule="hotel_management_system" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="DE0-Yi-9UT">
+                <viewController storyboardIdentifier="ProfileOverview" useStoryboardIdentifierAsRestorationIdentifier="YES" id="profile-overview-vc" customClass="ProfileOverviewViewController" customModule="hotel_management_system" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="profile-overview-view">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="Xgj-jI-Lol"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="profile-scroll">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="profile-content">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1080"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" text="Profile" textAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="title-label">
+                                                <rect key="frame" x="156.33333333333334" y="23" width="101.33333333333334" height="42"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="42" id="Y1x-Zy-SQG"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="35"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hero-card">
+                                                <rect key="frame" x="20" y="94" width="365" height="209"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="avt" translatesAutoresizingMaskIntoConstraints="NO" id="avatar-image">
+                                                        <rect key="frame" x="122.66666666666666" y="23" width="120" height="120"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="120" id="8Tq-RH-RyW"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <real key="value" value="60"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" text="Tinh Nguyen" textAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="name-label">
+                                                        <rect key="frame" x="99" y="160" width="166" height="28.666666666666657"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="28.666666666666657" id="NDg-C1-zcV"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="avatar-image" firstAttribute="top" secondItem="hero-card" secondAttribute="top" constant="23" id="1gm-jl-nyE"/>
+                                                    <constraint firstAttribute="bottom" secondItem="name-label" secondAttribute="bottom" constant="20.333333333333343" id="2Xn-cV-BgQ"/>
+                                                    <constraint firstItem="name-label" firstAttribute="leading" secondItem="hero-card" secondAttribute="leading" constant="99" id="LfZ-sn-ZPZ"/>
+                                                    <constraint firstItem="avatar-image" firstAttribute="centerX" secondItem="name-label" secondAttribute="centerX" id="ZjH-wl-JFc"/>
+                                                    <constraint firstItem="avatar-image" firstAttribute="centerX" secondItem="hero-card" secondAttribute="centerX" id="nzD-rd-Pgh"/>
+                                                    <constraint firstItem="name-label" firstAttribute="top" secondItem="avatar-image" secondAttribute="bottom" constant="17" id="zDC-2I-NGd"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <real key="value" value="28"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" text="Account" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="section-1">
+                                                <rect key="frame" x="20" y="336" width="78.666666666666671" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" text="Support" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="section-2">
+                                                <rect key="frame" x="20" y="622" width="76.666666666666671" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="menu-stack-1">
+                                                <rect key="frame" x="84" y="386" width="246" height="201.33333333333337"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btn-personal-info">
+                                                        <rect key="frame" x="0.0" y="0.0" width="246" height="38.333333333333336"/>
+                                                        <state key="normal" title="Personal Information"/>
+                                                        <buttonConfiguration key="configuration" style="filled" image="person.text.rectangle" catalog="system" imagePlacement="leading" title="Personal Information" imagePadding="12" cornerStyle="large"/>
+                                                        <connections>
+                                                            <segue destination="personal-info-vc" kind="show" identifier="showPersonalInfo" id="segue-personal-info"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btn-avatar">
+                                                        <rect key="frame" x="0.0" y="54.333333333333371" width="246" height="38.333333333333343"/>
+                                                        <state key="normal" title="Avatar"/>
+                                                        <buttonConfiguration key="configuration" style="filled" image="person.crop.circle" catalog="system" imagePlacement="leading" title="Avatar" imagePadding="12" cornerStyle="large"/>
+                                                        <connections>
+                                                            <segue destination="avatar-vc" kind="show" identifier="showAvatar" id="segue-avatar"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btn-bank">
+                                                        <rect key="frame" x="0.0" y="108.66666666666663" width="246" height="38.333333333333343"/>
+                                                        <state key="normal" title="Bank Cards"/>
+                                                        <buttonConfiguration key="configuration" style="filled" image="creditcard" catalog="system" imagePlacement="leading" title="Bank Cards" imagePadding="12" cornerStyle="large"/>
+                                                        <connections>
+                                                            <segue destination="bank-vc" kind="show" identifier="showBankCards" id="segue-bank"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btn-rights">
+                                                        <rect key="frame" x="0.0" y="163" width="246" height="38.333333333333343"/>
+                                                        <state key="normal" title="Rights &amp; Responsibilities"/>
+                                                        <buttonConfiguration key="configuration" style="filled" image="doc.text" catalog="system" imagePlacement="leading" title="Rights &amp; Responsibilities" imagePadding="12" cornerStyle="large"/>
+                                                        <connections>
+                                                            <segue destination="rights-vc" kind="show" identifier="showRights" id="segue-rights"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="menu-stack-2">
+                                                <rect key="frame" x="118" y="672" width="178" height="92.666666666666629"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btn-help">
+                                                        <rect key="frame" x="0.0" y="0.0" width="178" height="38.333333333333336"/>
+                                                        <state key="normal" title="Help &amp; Support"/>
+                                                        <buttonConfiguration key="configuration" style="filled" image="questionmark.circle" catalog="system" imagePlacement="leading" title="Help" imagePadding="12" cornerStyle="large"/>
+                                                        <connections>
+                                                            <segue destination="help-vc" kind="show" identifier="showHelp" id="segue-help"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btn-logout">
+                                                        <rect key="frame" x="0.0" y="54.333333333333371" width="178" height="38.333333333333343"/>
+                                                        <color key="tintColor" systemColor="systemRedColor"/>
+                                                        <state key="normal" title="Log Out"/>
+                                                        <buttonConfiguration key="configuration" style="filled" image="rectangle.portrait.and.arrow.right" catalog="system" imagePlacement="leading" title="Log Out" imagePadding="12" cornerStyle="large"/>
+                                                        <connections>
+                                                            <action selector="logout:" destination="profile-overview-vc" eventType="touchUpInside" id="HdD-4z-GUY"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="hero-card" secondAttribute="trailing" constant="29" id="1CV-IC-RNL"/>
+                                            <constraint firstItem="menu-stack-2" firstAttribute="top" secondItem="menu-stack-1" secondAttribute="bottom" constant="84.666666666666629" id="1Lr-JP-rMT"/>
+                                            <constraint firstItem="menu-stack-2" firstAttribute="leading" secondItem="profile-content" secondAttribute="leading" constant="118" id="5IA-g3-yv1"/>
+                                            <constraint firstItem="hero-card" firstAttribute="leading" secondItem="section-1" secondAttribute="leading" id="C13-QL-V5p"/>
+                                            <constraint firstItem="title-label" firstAttribute="top" secondItem="profile-content" secondAttribute="top" constant="23" id="C4m-CS-E1F"/>
+                                            <constraint firstItem="section-1" firstAttribute="top" secondItem="hero-card" secondAttribute="bottom" constant="33" id="Ek0-Cd-UMC"/>
+                                            <constraint firstItem="section-1" firstAttribute="leading" secondItem="section-2" secondAttribute="leading" id="SLL-dB-N0m"/>
+                                            <constraint firstItem="section-2" firstAttribute="top" secondItem="menu-stack-1" secondAttribute="bottom" constant="34.666666666666629" id="Wit-O1-TGp"/>
+                                            <constraint firstItem="title-label" firstAttribute="centerX" secondItem="menu-stack-1" secondAttribute="centerX" id="Y8t-Vd-39E"/>
+                                            <constraint firstItem="hero-card" firstAttribute="leading" secondItem="profile-content" secondAttribute="leading" constant="20" id="YXR-5D-9cR"/>
+                                            <constraint firstItem="hero-card" firstAttribute="top" secondItem="title-label" secondAttribute="bottom" constant="29" id="lej-ot-nQh"/>
+                                            <constraint firstItem="menu-stack-1" firstAttribute="top" secondItem="section-1" secondAttribute="bottom" constant="26" id="mAX-kw-4tn"/>
+                                            <constraint firstItem="menu-stack-1" firstAttribute="centerX" secondItem="menu-stack-2" secondAttribute="centerX" id="nMs-Oy-IiB"/>
+                                            <constraint firstAttribute="height" constant="1080" id="u1F-rz-lAh"/>
+                                            <constraint firstItem="title-label" firstAttribute="centerX" secondItem="profile-content" secondAttribute="centerX" id="udq-lB-I36"/>
+                                            <constraint firstItem="section-1" firstAttribute="top" secondItem="profile-content" secondAttribute="top" constant="336" id="vVN-8V-6E3"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" name="Background"/>
+                                <constraints>
+                                    <constraint firstItem="profile-content" firstAttribute="leading" secondItem="profile-scroll" secondAttribute="leading" id="ArN-eq-1JO"/>
+                                    <constraint firstAttribute="trailing" secondItem="profile-content" secondAttribute="trailing" id="Sh9-g4-JxG"/>
+                                    <constraint firstItem="profile-content" firstAttribute="top" secondItem="profile-scroll" secondAttribute="top" id="TT4-6a-pqh"/>
+                                    <constraint firstItem="profile-content" firstAttribute="centerX" secondItem="profile-scroll" secondAttribute="centerX" id="WQn-18-wCc"/>
+                                    <constraint firstAttribute="bottom" secondItem="profile-content" secondAttribute="bottom" constant="-272" id="tRX-Kz-IY6"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="safe-overview"/>
                         <color key="backgroundColor" name="Background"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="profile-scroll" secondAttribute="bottom" id="BMB-S3-IPT"/>
+                            <constraint firstItem="profile-scroll" firstAttribute="leading" secondItem="profile-overview-view" secondAttribute="leading" id="bg8-oE-5x7"/>
+                            <constraint firstItem="profile-scroll" firstAttribute="top" secondItem="safe-overview" secondAttribute="top" id="m5F-Xy-yvd"/>
+                            <constraint firstAttribute="trailing" secondItem="profile-scroll" secondAttribute="trailing" id="mvo-RG-vKu"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="3I7-NQ-Qp5"/>
+                    <navigationItem key="navigationItem" title="Profile" id="profile-nav"/>
+                    <connections>
+                        <outlet property="avatarImageView" destination="avatar-image" id="jzc-m1-jAd"/>
+                        <outlet property="nameLabel" destination="name-label" id="c9E-ut-MmP"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xdp-jH-0m7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="profile-overview-fr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6302.898550724638" y="1364.7321428571429"/>
+            <point key="canvasLocation" x="-749.27536231884062" y="1210.0446428571429"/>
+        </scene>
+        <!--Personal Information-->
+        <scene sceneID="personal-info-scene">
+            <objects>
+                <viewController storyboardIdentifier="PersonalInfoViewController" id="personal-info-vc" customClass="PersonalInfoViewController" customModule="hotel_management_system" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="personal-info-view">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="info-stack">
+                                <rect key="frame" x="20" y="84" width="374" height="280.66666666666669"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" text="Personal Information" textAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="info-title">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="28.666666666666668"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" text="Full Name: Tinh Nguyen" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="info-name">
+                                        <rect key="frame" x="0.0" y="46.666666666666657" width="374" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" text="Email: tinhisme1@gmail.com" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="info-email">
+                                        <rect key="frame" x="0.0" y="88.666666666666657" width="374" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" text="Phone: 0963334916" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="info-phone">
+                                        <rect key="frame" x="0.0" y="130.66666666666666" width="374" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" text="Address: HCM" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="info-address">
+                                        <rect key="frame" x="0.0" y="172.66666666666669" width="374" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" text="Username: tinkismeee" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="info-username">
+                                        <rect key="frame" x="0.0" y="214.66666666666669" width="374" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" text="Date of Birth: 16/03/2026" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="info-dob">
+                                        <rect key="frame" x="0.0" y="256.66666666666669" width="374" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="safe-info"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="info-stack" firstAttribute="leading" secondItem="safe-info" secondAttribute="leading" constant="20" id="info-leading"/>
+                            <constraint firstItem="info-stack" firstAttribute="top" secondItem="safe-info" secondAttribute="top" constant="40" id="info-top"/>
+                            <constraint firstItem="safe-info" firstAttribute="trailing" secondItem="info-stack" secondAttribute="trailing" constant="20" id="info-trailing"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Personal Information" id="nav-info"/>
+                    <connections>
+                        <outlet property="addressLabel" destination="info-address" id="Bc9-IB-bre"/>
+                        <outlet property="dobLabel" destination="info-dob" id="OoK-OT-rbQ"/>
+                        <outlet property="emailLabel" destination="info-email" id="y3r-BD-v4I"/>
+                        <outlet property="fullNameLabel" destination="info-name" id="fsw-nc-4LR"/>
+                        <outlet property="phoneLabel" destination="info-phone" id="M6e-7g-Sih"/>
+                        <outlet property="usernameLabel" destination="info-username" id="c9V-s0-uE6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fr-info" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1657" y="1209"/>
+        </scene>
+        <!--Avatar-->
+        <scene sceneID="avatar-scene">
+            <objects>
+                <viewController storyboardIdentifier="AvatarViewController" id="avatar-vc" customClass="AvatarViewController" customModule="hotel_management_system" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="avatar-view">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" image="avt" translatesAutoresizingMaskIntoConstraints="NO" id="avatar-large">
+                                <rect key="frame" x="57" y="184" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="avatar-large-h"/>
+                                    <constraint firstAttribute="width" constant="300" id="avatar-large-w"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <real key="value" value="150"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" text="Profile Avatar" textAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="avatar-text">
+                                <rect key="frame" x="131.66666666666669" y="516" width="150.66666666666669" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="safe-avatar"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="avatar-large" firstAttribute="centerX" secondItem="avatar-view" secondAttribute="centerX" id="avatar-large-center"/>
+                            <constraint firstItem="avatar-large" firstAttribute="top" secondItem="safe-avatar" secondAttribute="top" constant="140" id="avatar-large-top"/>
+                            <constraint firstItem="avatar-text" firstAttribute="centerX" secondItem="avatar-view" secondAttribute="centerX" id="avatar-text-center"/>
+                            <constraint firstItem="avatar-text" firstAttribute="top" secondItem="avatar-large" secondAttribute="bottom" constant="32" id="avatar-text-top"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Avatar" id="nav-avatar"/>
+                    <connections>
+                        <outlet property="avatarImageView" destination="avatar-large" id="CAv-IS-6D3"/>
+                        <outlet property="titleLabel" destination="avatar-text" id="gtN-9r-a8f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fr-avatar" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-749" y="2014"/>
+        </scene>
+        <!--Bank Cards-->
+        <scene sceneID="bank-scene">
+            <objects>
+                <viewController storyboardIdentifier="BankCardsViewController" id="bank-vc" customClass="BankCardsViewController" customModule="hotel_management_system" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bank-view">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bank-card-1">
+                                <rect key="frame" x="20" y="84" width="374" height="180"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" text="VISA" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bank-type-1">
+                                        <rect key="frame" x="24.000000000000004" y="24" width="55.333333333333343" height="29"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" text="**** **** **** 4821" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bank-number-1">
+                                        <rect key="frame" x="24" y="85" width="190" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" text="TINH NGUYEN" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bank-name-1">
+                                        <rect key="frame" x="23.999999999999993" y="132" width="112.33333333333331" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.17299999999999999" green="0.35299999999999998" blue="0.90599999999999992" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="bank-name-1" firstAttribute="leading" secondItem="bank-card-1" secondAttribute="leading" constant="24" id="bank-name-leading"/>
+                                    <constraint firstItem="bank-name-1" firstAttribute="top" secondItem="bank-number-1" secondAttribute="bottom" constant="18" id="bank-name-top"/>
+                                    <constraint firstItem="bank-number-1" firstAttribute="leading" secondItem="bank-card-1" secondAttribute="leading" constant="24" id="bank-number-leading"/>
+                                    <constraint firstItem="bank-number-1" firstAttribute="top" secondItem="bank-type-1" secondAttribute="bottom" constant="32" id="bank-number-top"/>
+                                    <constraint firstItem="bank-type-1" firstAttribute="leading" secondItem="bank-card-1" secondAttribute="leading" constant="24" id="bank-type-leading"/>
+                                    <constraint firstItem="bank-type-1" firstAttribute="top" secondItem="bank-card-1" secondAttribute="top" constant="24" id="bank-type-top"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <real key="value" value="26"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="safe-bank"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bank-card-1" firstAttribute="height" constant="180" id="bank-card-height"/>
+                            <constraint firstItem="bank-card-1" firstAttribute="leading" secondItem="safe-bank" secondAttribute="leading" constant="20" id="bank-card-leading"/>
+                            <constraint firstItem="bank-card-1" firstAttribute="top" secondItem="safe-bank" secondAttribute="top" constant="40" id="bank-card-top"/>
+                            <constraint firstItem="safe-bank" firstAttribute="trailing" secondItem="bank-card-1" secondAttribute="trailing" constant="20" id="bank-card-trailing"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Bank Cards" id="nav-bank"/>
+                    <connections>
+                        <outlet property="cardHolderLabel" destination="bank-name-1" id="J9O-Rd-f8v"/>
+                        <outlet property="cardNumberLabel" destination="bank-number-1" id="0lu-C4-iLb"/>
+                        <outlet property="cardTypeLabel" destination="bank-type-1" id="yR7-eE-pcd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fr-bank" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-749" y="532"/>
+        </scene>
+        <!--Rights & Responsibilities-->
+        <scene sceneID="rights-scene">
+            <objects>
+                <viewController storyboardIdentifier="RightsResponsibilitiesViewController" id="rights-vc" customClass="RightsResponsibilitiesViewController" customModule="hotel_management_system" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rights-view">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rights-text">
+                                <rect key="frame" x="20" y="84" width="374" height="500"/>
+                                <string key="text">1. Members have the right to use hotel services according to booking policies.  2. Members must provide accurate personal information.  3. Members are responsible for preserving hotel property.  4. Payment and cancellation policies apply according to each booking.  5. Please contact support for any disputes or account issues.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="safe-rights"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rights-text" firstAttribute="height" constant="500" id="rights-height"/>
+                            <constraint firstItem="rights-text" firstAttribute="leading" secondItem="safe-rights" secondAttribute="leading" constant="20" id="rights-leading"/>
+                            <constraint firstItem="rights-text" firstAttribute="top" secondItem="safe-rights" secondAttribute="top" constant="40" id="rights-top"/>
+                            <constraint firstItem="safe-rights" firstAttribute="trailing" secondItem="rights-text" secondAttribute="trailing" constant="20" id="rights-trailing"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Rights &amp; Responsibilities" id="nav-rights"/>
+                    <connections>
+                        <outlet property="textView" destination="rights-text" id="Dbm-m5-hsy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fr-rights" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="262" y="1210"/>
+        </scene>
+        <!--Help & Support-->
+        <scene sceneID="help-scene">
+            <objects>
+                <viewController storyboardIdentifier="HelpSupportViewController" id="help-vc" customClass="HelpSupportViewController" customModule="hotel_management_system" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="help-view">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="help-stack">
+                                <rect key="frame" x="20" y="83.999999999999986" width="374" height="160.66666666666663"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" text="Help &amp; Support" textAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="help-title">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="28.666666666666668"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" text="Hotline: 1900 1234" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="help-hotline">
+                                        <rect key="frame" x="0.0" y="48.666666666666657" width="374" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" text="Email: support@umthotel.com" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="help-email">
+                                        <rect key="frame" x="0.0" y="92.666666666666657" width="374" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" text="Working hours: 24/7" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="help-hours">
+                                        <rect key="frame" x="0.0" y="136.66666666666666" width="374" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="safe-help"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="help-stack" firstAttribute="leading" secondItem="safe-help" secondAttribute="leading" constant="20" id="help-leading"/>
+                            <constraint firstItem="help-stack" firstAttribute="top" secondItem="safe-help" secondAttribute="top" constant="40" id="help-top"/>
+                            <constraint firstItem="safe-help" firstAttribute="trailing" secondItem="help-stack" secondAttribute="trailing" constant="20" id="help-trailing"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Help &amp; Support" id="nav-help"/>
+                    <connections>
+                        <outlet property="emailLabel" destination="help-email" id="9I4-By-X0P"/>
+                        <outlet property="hotlineLabel" destination="help-hotline" id="6RE-8N-pTR"/>
+                        <outlet property="workingHoursLabel" destination="help-hours" id="x4d-HD-MfK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fr-help" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1084" y="1210"/>
         </scene>
         <!--Create New Password-->
         <scene sceneID="VlA-ie-0tb">
@@ -2010,7 +2422,7 @@
         <!--Navigation Controller-->
         <scene sceneID="yxk-MT-pOC">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bip-fM-4ML" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LoginNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bip-fM-4ML" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zor-hm-pw5">
                         <rect key="frame" x="0.0" y="88" width="414" height="54"/>
@@ -2055,9 +2467,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Bs6-sf-eia" kind="relationship" relationship="rootViewController" id="wn0-5w-cln"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nfx-m0-NpG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2069,9 +2478,16 @@
         <image name="car" catalog="system" width="128" height="95"/>
         <image name="carrot" catalog="system" width="128" height="122"/>
         <image name="carseat.left.massage" catalog="system" width="128" height="118"/>
+        <image name="creditcard" catalog="system" width="128" height="88"/>
+        <image name="doc.text" catalog="system" width="115" height="128"/>
         <image name="fork.knife" catalog="system" width="94" height="128"/>
         <image name="history" width="512" height="512"/>
+        <image name="mockImage" width="64" height="64"/>
         <image name="person.3.fill" catalog="system" width="128" height="66"/>
+        <image name="person.crop.circle" catalog="system" width="128" height="123"/>
+        <image name="person.text.rectangle" catalog="system" width="128" height="93"/>
+        <image name="questionmark.circle" catalog="system" width="128" height="123"/>
+        <image name="rectangle.portrait.and.arrow.right" catalog="system" width="128" height="109"/>
         <image name="refrigerator" catalog="system" width="97" height="128"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <image name="suitcase.fill" catalog="system" width="128" height="100"/>
@@ -2096,6 +2512,12 @@
         <namedColor name="White">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
