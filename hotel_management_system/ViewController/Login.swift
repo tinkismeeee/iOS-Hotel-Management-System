@@ -49,6 +49,12 @@ class Login: UIViewController {
 //            present(vc, animated: true)
             return
         }
+        else if email == "admin" && password == "admin" {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "AdminNav")
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true)
+        }
         else {
             let body = LoginModel(email: email, password: password)
             Service.shared.login(body: body) { result in

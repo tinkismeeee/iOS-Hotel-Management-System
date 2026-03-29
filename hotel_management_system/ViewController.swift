@@ -13,9 +13,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
     }
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .darkContent
-    }
+//    override var preferredStatusBarStyle: UIStatusBarStyle {
+//        return .darkContent
+//    }
 
 }
 

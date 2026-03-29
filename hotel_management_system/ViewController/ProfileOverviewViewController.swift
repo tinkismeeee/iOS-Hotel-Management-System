@@ -41,18 +41,33 @@ class ProfileOverviewViewController: UIViewController {
         }
     }
     @IBAction func logout(_ sender: Any) {
-        UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
-        UserDefaults.standard.synchronize()
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let loginNav = storyboard.instantiateViewController(withIdentifier: "LoginNavigationController")
+        let alert = UIAlertController(
+                title: "Đăng xuất",
+                message: "Bạn có chắc muốn đăng xuất không?",
+                preferredStyle: .alert
+            )
 
-            if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-               let sceneDelegate = windowScene.delegate as? SceneDelegate,
-               let window = sceneDelegate.window {
-                window.rootViewController = loginNav
-                window.makeKeyAndVisible()
+            let cancelAction = UIAlertAction(title: "Hủy", style: .cancel, handler: nil)
+
+            let logoutAction = UIAlertAction(title: "Đăng xuất", style: .destructive) { _ in
+                UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+                UserDefaults.standard.synchronize()
+
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let loginNav = storyboard.instantiateViewController(withIdentifier: "LoginNavigationController")
+
+                if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                   let sceneDelegate = windowScene.delegate as? SceneDelegate,
+                   let window = sceneDelegate.window {
+                    window.rootViewController = loginNav
+                    window.makeKeyAndVisible()
+                }
             }
+
+            alert.addAction(cancelAction)
+            alert.addAction(logoutAction)
+
+            present(alert, animated: true)
     }
     
 }
