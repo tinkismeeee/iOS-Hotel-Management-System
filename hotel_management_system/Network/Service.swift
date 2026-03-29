@@ -49,7 +49,9 @@ class Service {
             }
     }
     func getAllBooking(completion: @escaping (Result <Data?, AFError>) -> Void) {
-        AF.request(
+        AF.request(BookingRouter.getAllBooking).validate().response {
+            response in completion(response.result)
+        }
     }
 }
 
