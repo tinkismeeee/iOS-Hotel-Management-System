@@ -13,6 +13,7 @@ class BookingHistory: UIViewController {
     @IBOutlet weak var roomAndFloor: UILabel!
     @IBOutlet weak var checkInandCheckout: UILabel!
     @IBOutlet weak var roomPrice: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

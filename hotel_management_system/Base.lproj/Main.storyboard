@@ -1037,7 +1037,7 @@
                                 <rect key="frame" x="0.0" y="104" width="414" height="792"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="159" id="grV-8L-yk6">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="159" id="grV-8L-yk6" customClass="BookingHistoryCell" customModule="hotel_management_system" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="414" height="159"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="grV-8L-yk6" id="VYv-Os-UnT">
@@ -1098,6 +1098,13 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="Background"/>
+                                        <connections>
+                                            <outlet property="ViewCell" destination="cDP-x3-q2Z" id="ad1-RJ-hiW"/>
+                                            <outlet property="checkinAndCheckoutTime" destination="Q1O-8e-SfR" id="X8s-sF-tQP"/>
+                                            <outlet property="roomImage" destination="FZI-De-Gji" id="2g9-zt-efY"/>
+                                            <outlet property="roomNumberAndFloor" destination="vZa-oF-ULC" id="iMS-wi-dgh"/>
+                                            <outlet property="roomPrice" destination="1sU-mm-yD9" id="qs9-Pv-3ZD"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -1111,12 +1118,6 @@
                             <constraint firstItem="NSY-bM-Tl1" firstAttribute="top" secondItem="kwo-Oh-1og" secondAttribute="top" constant="16" id="zoq-xt-Thi"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="checkInandCheckout" destination="Q1O-8e-SfR" id="GvV-QA-Yn6"/>
-                        <outlet property="roomAndFloor" destination="vZa-oF-ULC" id="8CM-3V-Qs5"/>
-                        <outlet property="roomImage" destination="FZI-De-Gji" id="csR-Xk-Cst"/>
-                        <outlet property="roomPrice" destination="1sU-mm-yD9" id="74s-nO-sRa"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P7Y-Yw-KEe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
