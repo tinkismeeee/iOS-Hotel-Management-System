@@ -42,14 +42,14 @@ class ProfileOverviewViewController: UIViewController {
     }
     @IBAction func logout(_ sender: Any) {
         let alert = UIAlertController(
-                title: "Đăng xuất",
-                message: "Bạn có chắc muốn đăng xuất không?",
+                title: "Logout",
+                message: "Sure?",
                 preferredStyle: .alert
             )
 
-            let cancelAction = UIAlertAction(title: "Hủy", style: .cancel, handler: nil)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
 
-            let logoutAction = UIAlertAction(title: "Đăng xuất", style: .destructive) { _ in
+            let logoutAction = UIAlertAction(title: "Logout", style: .destructive) { _ in
                 UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
                 UserDefaults.standard.synchronize()
 

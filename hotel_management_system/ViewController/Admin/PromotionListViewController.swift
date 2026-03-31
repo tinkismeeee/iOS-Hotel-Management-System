@@ -174,7 +174,15 @@ class AddPromotionViewController: UIViewController {
     @IBOutlet weak var txtDesc: UITextField!
     
     var onAddSuccess: (() -> Void)?
-
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+            tap.cancelsTouchesInView = false
+            view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyboard() {
+            view.endEditing(true)
+        }
     @IBAction func addNewBtnPressed(_ sender: Any) {
         let newP = PromotionAdmin(
             promotion_id: nil,

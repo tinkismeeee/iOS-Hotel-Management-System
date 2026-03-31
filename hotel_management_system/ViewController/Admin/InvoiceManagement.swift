@@ -141,7 +141,15 @@ class AddInvoiceViewController: UIViewController {
     @IBOutlet weak var txtStatus: UITextField!
 
     var onSuccess: (() -> Void)?
-
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+            tap.cancelsTouchesInView = false
+            view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
     @IBAction func saveBtnPressed(_ sender: Any) {
         let newInv = AdminInvoice(
             invoice_id: nil,

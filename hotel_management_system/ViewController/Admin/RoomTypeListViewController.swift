@@ -155,7 +155,15 @@ class AddRoomTypeViewController: UIViewController {
     @IBOutlet weak var txtDescription: UITextField!
     
     var onSuccess: (() -> Void)?
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+            tap.cancelsTouchesInView = false
+            view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
     @IBAction func savePressed(_ sender: Any) {
         let newRT = RoomType(
             room_type_id: nil,

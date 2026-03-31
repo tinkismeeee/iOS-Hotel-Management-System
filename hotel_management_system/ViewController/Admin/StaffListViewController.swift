@@ -165,7 +165,16 @@ class AddStaffViewController: UIViewController {
     @IBOutlet weak var txtPassword: UITextField! // Thêm pass khi tạo mới
     
     var onSuccess: (() -> Void)?
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+            tap.cancelsTouchesInView = false
+            view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyboard() {
+            view.endEditing(true)
+        }
     @IBAction func savePressed(_ sender: Any) {
         let newStaff = Staff(
             user_id: nil,

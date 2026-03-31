@@ -121,7 +121,15 @@ class AddRoomViewController: UIViewController {
     @IBOutlet weak var txtStatus: UITextField!; @IBOutlet weak var txtTypeName: UITextField!
     
     var onAddSuccess: (() -> Void)?
-
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+            tap.cancelsTouchesInView = false
+            view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
     @IBAction func saveBtnPressed(_ sender: Any) {
         // Kiểm tra an toàn giá trị số, tránh NaN
         let floor = Int(txtFloor.text ?? "") ?? 0

@@ -162,7 +162,15 @@ class AddCustomerViewController: UIViewController {
     @IBOutlet weak var txtAddress: UITextField!
     
     var onSuccess: (() -> Void)?
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+            tap.cancelsTouchesInView = false
+            view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
     @IBAction func savePressed(_ sender: Any) {
         let newCust = Customer(
             user_id: nil,
@@ -196,7 +204,7 @@ class EditCustomerViewController: UIViewController {
     
     var customer: Customer?
     var onSuccess: (() -> Void)?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         if let c = customer {
@@ -209,8 +217,13 @@ class EditCustomerViewController: UIViewController {
             txtAddress.text = c.address
             txtUserID.isEnabled = false
         }
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+            tap.cancelsTouchesInView = false
+            view.addGestureRecognizer(tap)
     }
-    
+    @objc func dismissKeyboard() {
+            view.endEditing(true)
+        }
     @IBAction func updatePressed(_ sender: Any) {
         guard let id = customer?.user_id else { return }
         

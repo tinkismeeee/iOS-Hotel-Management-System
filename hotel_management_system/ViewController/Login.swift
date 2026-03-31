@@ -80,8 +80,26 @@ class Login: UIViewController {
                                     self.loginInfo.set(user["address"] as? String, forKey: "adress")
                                     self.loginInfo.set(user["date_of_birth"] as? String, forKey: "date_of_birth")
                                     self.loginInfo.set(user["username"] as? String, forKey: "username")
-                                    self.performSegue(withIdentifier: "enterotp", sender: email)
-                                    self.loginSuccess = false
+                                    self.checkStaff(email: email) { isStaff in
+                                                        DispatchQueue.main.async {
+                                                            self.emailInput.text = ""
+                                                            self.passwordInput.text = ""
+
+                                                            if isStaff {
+                                                                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                                                                let vc = storyboard.instantiateViewController(withIdentifier: "StaffNav")
+                                                                vc.modalPresentationStyle = .fullScreen
+                                                                self.present(vc, animated: true)
+                                                            } else {
+                                                                self.loginSuccess = true
+                                                                self.performSegue(withIdentifier: "enterotp", sender: email)
+                                                                self.loginSuccess = false
+                                                            }
+                                                        }
+                                                    }
+
+//                                    self.performSegue(withIdentifier: "enterotp", sender: email)
+//                                    self.loginSuccess = false
                                 }
                             } else {
                                 print("user_id not found")
@@ -105,5 +123,33 @@ class Login: UIViewController {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         resignFirstResponder()
         return true
+    }
+    func checkStaff(email: String, completion: @escaping (Bool) -> Void) {
+        guard let url = URL(string: "http://38.242.228.108:5000/api/staff") else {
+            completion(false)
+            return
+        }
+
+        URLSession.shared.dataTask(with: url) { data, _, error in
+            if let error = error {
+                print("Staff API error: \(error)")
+                completion(false)
+                return
+            }
+
+            guard let data = data else {
+                completion(false)
+                return
+            }
+
+            do {
+                let staffs = try JSONDecoder().decode([StaffUser].self, from: data)
+                let exists = staffs.contains { $0.email.lowercased() == email.lowercased() }
+                completion(exists)
+            } catch {
+                print("Decode staff error: \(error)")
+                completion(false)
+            }
+        }.resume()
     }
 }
